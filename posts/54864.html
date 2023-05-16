@@ -463,11 +463,61 @@
 <li>授权访问OSS</li>
 </ol>
 <p>返回之后，点击刚刚创建的用户的<code>添加权限</code></p>
-<p><img src="/../images/blogImg/alioss/addLimit.png" alt="子用户添加oss控制权限"></p>
 <p>搜索“OSS”，选择添加AliyunOSSFullAccess权限</p>
-<p><img src="/"></p>
-<p><img src="/"></p>
-<h2 id="安装一键部署脚本"><a href="#安装一键部署脚本" class="headerlink" title="安装一键部署脚本"></a>安装一键部署脚本</h2><p>&#x2F;&#x2F;TODO</p>
+<p><img src="/../images/blogImg/alioss/addLimit.png" alt="子用户添加oss控制权限"></p>
+<h2 id="安装一键部署脚本"><a href="#安装一键部署脚本" class="headerlink" title="安装一键部署脚本"></a>安装一键部署脚本</h2><p>这里需要用到一个上传博客文件的cli：<a target="_blank" rel="noopener" href="https://github.com/huzhanfei/hexo-deployer-ali-oss-extend">hexo-deployer-ali-oss-extend</a></p>
+<p>在hexo博客目录通过npm安装该脚本:</p>
+<pre class=" language-cmd"><code class="language-cmd">npm i hexo-deployer-ali-oss-extend
+</code></pre>
+<p>在hexo项目的配置文件_config.yml中添加相关配置：</p>
+<pre class=" language-yml"><code class="language-yml">deploy:
+- type: git
+  repo: 
+    github: git@github.com:Clov614/Clov614.github.io.git
+    # coding: git@e.coding.net:aisakataiga/taiga/taiga.git
+    gitee: git@gitee.com:osp2333/osp2333.git
+  branch: master
+# 阿里云 oss 同步
+- type: ali-oss
+  region: oss-cn-shanghai
+  accessKeyId: LTAI5tMHS6qRtwhzKTKJN4aK
+  accessKeySecret: EzkdWWXcL0QZsZn9bzyFatjkFlvZAM
+  bucket: blog614
+  cacheControl:
+    images: public, max-age=31536000  
+    css: public, max-age=604800     
+    js: public, max-age=86400        
+    html: public, max-age=86400     
+    other: no-cache
+</code></pre>
+<p><code>cacheControl</code>缓存解释:</p>
+<ul>
+<li>images:图片资源变化不频繁,设置 max-age&#x3D;31536000,缓存 1 年</li>
+<li>css:CSS 资源更新可能比较频繁,设置 max-age&#x3D;604800,缓存 1 周</li>
+<li>js&#x2F;html:JS&#x2F;HTML 资源更新频率中等,设置 max-age&#x3D;86400,缓存 1 天</li>
+<li>other:其他资源更新频率未知,设置 no-cache,不缓存</li>
+</ul>
+<p>这里需要将type设置为同级的列表</p>
+<p>阿里云oss同步的配置解释：</p>
+<pre class=" language-yml"><code class="language-yml">deploy:
+- type: ali-oss
+  region: <您的oss 区域代码>
+  accessKeyId: <您的oss  accessKeyId>
+  accessKeySecret: <您的oss accessKeySecret>
+  bucket: <您的bucket name>
+  cacheControl:
+    images: <图片文件HTTP响应头Cache-Control>，留空为no-cache
+    css: <CSS文件HTTP响应头Cache-Control>，留空为no-cache
+    js: <JS文件HTTP响应头Cache-Control>，留空为no-cache
+    html: <HTML文件HTTP响应头Cache-Control>，留空为no-cache
+    other: <其它文件HTTP响应头Cache-Control>，留空为no-cache
+</code></pre>
+<p>其中区域代码，可以在OSS的Bucket概览当中找到，如下图所示：</p>
+<p><img src="/../images/blogImg/alioss/viewRegion.png" alt="概览中查看区域代码"></p>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><p>在菜单栏中进入<code>数据处理</code> -&gt; <code>域名管理</code> 中绑定域名以及配置相关证书开启https</p>
+<h2 id="关于CDN"><a href="#关于CDN" class="headerlink" title="关于CDN"></a>关于CDN</h2><p>CDN我使用的是腾讯云，腾讯云的话配置应该可以单独写一篇文章</p>
+<p>如果对访问速度有要求的话可以在自定义域名中超链接到阿里云CDN中按照指示进行配置</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>阿里云oss可以很好的解决国内访问速度不佳的问题，oss胜在很便宜，如果你的博客访问量不大，<br>可以在oss中配置博客页面来达到国内流畅访问，如果用gitee page 的话也不是不行，但是审核略微麻烦。</p>
 
             </div>
             <hr/>
@@ -971,29 +1021,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/54864.html">
+                <a href="/posts/16752.html">
                     <div class="card-image">
                         
-                        <img src="/../images/cover/107664314_p0_master1200.jpg" class="responsive-img" alt="hexo 设置博客部署至阿里云oss对象存储">
+                        <img src="/../images/cover/108042428_p0_master1200.jpg" class="responsive-img" alt="java 中的 :: 是什么符号">
                         
-                        <span class="card-title">hexo 设置博客部署至阿里云oss对象存储</span>
+                        <span class="card-title">java 中的 :: 是什么符号</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hexo博客 设置一键部署至阿里云oss对象存储现在使用Hexo 构建静态网站的人数日益增加,许多人会选择Github Pages 服务来部署自己的静态网站,但是Github Pages 在中国的访问速度实在难以接受。本文介绍如何一键使用阿
+                            java 中的 :: 是什么符号:: 是 Java 中的方法引用操作符。它可以用来引用类方法或实例方法。
+方法引用使得开发者可以直接引用已经存在的方法,而不是定义新的匿名方法。它使代码更简洁,更容易理解。
+方法引用有三种形式:
+
+类名::静
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1002,20 +1055,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                        <span class="chip bg-color">阿里云</span>
-                    </a>
-                    
-                    <a href="/tags/oss/">
-                        <span class="chip bg-color">oss</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
