@@ -1,0 +1,1951 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="程序设计综合实践课堂笔记, blog,博客,sakura,cat,樱花,猫,订阅,教程">
+    <meta name="description" content="blog 一个技术分享博客 sakura cat 樱花 猫">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>程序设计综合实践课堂笔记 | Kirino的小站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
+     crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Kirino的小站</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Kirino的小站</div>
+        <div class="logo-desc">
+            
+            blog 一个技术分享博客 sakura cat 樱花 猫
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">程序设计综合实践课堂笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
+                            </a>
+                        
+                            <a href="/tags/Docs/">
+                                <span class="chip bg-color">Docs</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-04-19
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="一、指针的概念及其定义"><a href="#一、指针的概念及其定义" class="headerlink" title="一、	指针的概念及其定义"></a>一、	指针的概念及其定义</h1><ul>
+<li>1 	指针和地址：指针就是地址，地址指的是内存地址的的编号，指针是用于存放地址的变量。</li>
+<li>2 	指针变量，专门用于存地址的变量。</li>
+<li>3 	指针的定义方式：<br>数据类型  *  指针变量名  &#x2F;&#x2F;此处的*表示该变量是指针变量  </li>
+<li>4  &amp;：取地址运算符  </li>
+<li>5  *：取内容运算符，  </li>
+<li>6  <code>指针变量存了谁的地址，那么它就指向谁！！！</code></li>
+</ul>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>pa<span class="token punctuation">;</span>
+pa<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//表示取整型变量a的地址存入到指针变量pa中；</span>
+<span class="token function">printf</span><span class="token punctuation">(</span>“<span class="token operator">%</span>d<span class="token punctuation">,</span><span class="token operator">%</span>d”<span class="token punctuation">,</span>a<span class="token punctuation">,</span><span class="token operator">*</span>pa<span class="token punctuation">)</span>；<span class="token comment" spellcheck="true">//输出结果均为100</span>
+</code></pre>
+<p>*pa：表示指针变量pa所指向的变量（a） 等价于  a<br>pa 等价于 &amp;a  </p>
+<h1 id="二、指针的应用"><a href="#二、指针的应用" class="headerlink" title="二、	指针的应用"></a>二、	指针的应用</h1><ul>
+<li>1 	指针变量的类型必须与其操作的数据类型一致，否则将出错。</li>
+</ul>
+<h3 id="例子：-1"><a href="#例子：-1" class="headerlink" title="例子："></a>例子：</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">514</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>pa<span class="token punctuation">;</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>pc<span class="token punctuation">;</span>
+pa<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+pc<span class="token operator">=</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span><span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span><span class="token operator">*</span>pc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code>输出结果为：
+514
+2     --大家考虑为什么是这个结果？？？
+      -- pa为int类型的指针变量  
+      pa的地址为 00000010 | 00000010
+      而pc为char类型的指针变量pc只有一个字节(也就是高位无了) 
+      pc的地址为 00000010
+</code></pre>
+<p><code>以上结论：什么类型数据就必须用什么类型的指针变量来对其进行引用！！！</code>  </p>
+<h1 id="三、指针的移动"><a href="#三、指针的移动" class="headerlink" title="三、	指针的移动"></a>三、	指针的移动</h1><p>C语言规定指针是可以移动的，如何移动呢？<br>可以采用对指针变量的加和减的运算来实现指针在内存当中的移动。<code>注意：指针变量不存在乘除运算。</code>  </p>
+<h3 id="如"><a href="#如" class="headerlink" title="如:"></a>如:</h3><pre class=" language-C"><code class="language-C">int *p;  
+p=p+1（相当于p++）;
+</code></pre>
+<p>表示<code>指针变量p往高地址移动一个数据单元，具体移动多少个字节取决于指针的类型。若p的类型是char *，那么往高地址移动一个数据单元，就是往地址移动1个字节；若p的类型是int *，那么往高地址移动一个数据单元，就是往高地址移动2个字节；以此类推。</code>  </p>
+<h1 id="四、指针与数组"><a href="#四、指针与数组" class="headerlink" title="四、	指针与数组"></a>四、	指针与数组</h1><p><strong>数组的数组名表示数组的首地址，且是一个常量，在程序运行过程当中，其值是不能被改变的。数组元素在内存中是连续分布。</strong>  </p>
+<pre class=" language-C"><code class="language-C">int a[5]=&#123;10,20,30,40,50&#125;;
+    int *p;
+    int i;
+    p=a;
+        for(i=0;i<=4;i++)
+    &#123;
+        printf("%d ",*(p++));
+&#125;
+</code></pre>
+<p>输出结果：10 20 30 40 50<br>注意（本部分内容，有同学们自己根据上课的讲解自行补充！）：<br><em>p++等价于</em>(p++):<br>(*p)++:<br>*++p:<br>++*p  </p>
+<h1 id="五、指针与函数"><a href="#五、指针与函数" class="headerlink" title="五、	指针与函数"></a>五、	指针与函数</h1><ul>
+<li>1 	指针变量作为函数参数在函数中进行传递</li>
+</ul>
+<p>例：调用函数，对主函数中的两个变量的值进行互换操作，对照两种互换函数的区别  </p>
+<pre class=" language-C"><code class="language-C">#include "stdio.h"
+void change1(int x,int y)
+&#123;
+    int t;
+    t=x;
+    x=y;
+    y=t;
+    return;
+&#125;
+
+void change2(int *x,int *y)
+&#123;
+    int t;
+    t=*x;
+    *x=*y;
+    *y=t;
+    return;
+&#125;
+
+void main()
+&#123;
+    int a=100,b=200;
+    change2(&a,&b);
+    printf("%d,%d\n",a,b);
+&#125;
+</code></pre>
+<ul>
+<li>2  函数名作为函数参数在函数中进行传递</li>
+</ul>
+<pre class=" language-C"><code class="language-C">#include "stdio.h"
+fun(int *p)
+&#123;	int i;
+    for(i=0;i<=4;i++)
+    &#123;		p[i]=p[i]*10;	&#125;
+&#125;
+fun2(int p[])
+&#123;	int i;
+    for(i=0;i<=4;i++)
+    &#123;		p[i]=p[i]*10;	&#125;
+&#125;
+void main()
+&#123;   int a[5]=&#123;10,20,30,40,50&#125;;
+    int i;
+    fun2(a);
+    for(i=0;i<=4;i++)
+    &#123;    	printf("%d ",a[i]);    &#125;
+&#125;
+</code></pre>
+<ul>
+<li>3 	返回值类型为指针的函数（本部分内容将结合链表内容一起讲解）</li>
+</ul>
+<h1 id="六、-宏定义相关"><a href="#六、-宏定义相关" class="headerlink" title="六、 宏定义相关"></a>六、 宏定义相关</h1><h2 id="一、编译预处理"><a href="#一、编译预处理" class="headerlink" title="一、编译预处理"></a>一、编译预处理</h2><ul>
+<li>1  概念：在<strong>对程序进行编译之前</strong>，必须对程序中的这些特殊命令进行“预处理”操作，即对预处理命令进行相对的处理。在进行处理后，再由C编译程序将处理后的程序代码进行编译处理，得到目标代码。（编辑-&gt;<code>编译</code>-&gt;连接-&gt;运行）</li>
+<li>2  预处理命令分类：宏定义、文件包含、条件编译，这些命令均以“#”开头。</li>
+<li>3  <code>注意：编译预处理命令是一条“命令”，而不是“语句”，因此命令的结束不能添加分号！！</code></li>
+</ul>
+<h2 id="二、宏定义define"><a href="#二、宏定义define" class="headerlink" title="二、宏定义define"></a>二、宏定义define</h2><p><strong>宏定义中的宏名仅简单地进行宏替换操作，具体替换之后在程序中起什么作用，则由具体的程序代码决定，宏定义并不检查语义是否正确！！</strong>  </p>
+<ul>
+<li>1  不带参宏定义<br>定义格式：#define 标识符  字符串</li>
+</ul>
+<p>如：  </p>
+<pre><code>#define N 1000   //用标识符N代表字符串1000
+#define BEGIN main()&#123;//用标识符BEGIN代表字符串main()&#123;
+#define END  &#125;  //用标识符END代表字符串 &#125;
+</code></pre>
+<p>程序举例：  </p>
+<pre class=" language-C"><code class="language-C">#define BEGIN main()&#123;
+#define END &#125;
+#define GS "%d\n"
+BEGIN
+int a=100;
+printf(GS,a);
+END
+//程序输出结果为：100
+</code></pre>
+<ul>
+<li>2  带参宏定义<br>定义格式：#define  标记符（形参表）  字符串<br>带参宏在进行宏替换时，需要对将实参替换原来宏当中的形参。<br>如：</li>
+</ul>
+<pre class=" language-C"><code class="language-C">#define PI 3.14
+#define S(r)  PI*r*r  
+</code></pre>
+<p>那么在程序中若使用S(7)，则在宏替换后，其表达式为：<br>S(7)&#x3D;3.14<em>7</em>7<br>带参宏程序举例：  </p>
+<pre class=" language-C"><code class="language-C">#include "stdio.h"
+#define PI 3.14
+#define S(r) PI*r*r
+void main()
+&#123;
+    double area;
+    area=S(7);/*在编译之前必须将S(7)替换为3.14*7*7*/
+    printf("%lf\n",area);&#125;
+
+    //运行结果: 153.860000  
+</code></pre>
+<pre class=" language-C"><code class="language-C">#include "stdio.h"
+#define S(a) a/a
+void main()
+&#123;
+    int i;
+    i=S(4+4);/*在编译之前S(4+4)将被替换为：4+4/4+4*/
+    printf("%d",i);
+&#125;
+    //运行结果: 9
+</code></pre>
+<h2 id="三、文件包含"><a href="#三、文件包含" class="headerlink" title="三、文件包含"></a>三、文件包含</h2><ul>
+<li>1  文件包含的方式有两种：<br><em>方式一</em>：#include“被包含文件名”&#x2F;&#x2F;编译器首先到当前目录下查找是否存在“被包含文件”，若不存在，则接着到tc编译器目录下的“include”文件路径中查找；<br> <em>方式二</em>：#include&lt;被包含文件名&gt; &#x2F;&#x2F;编译器会到系统路径下查找头文件，若采用“tc”,在到tc编译器目录下的“include”文件路径中查找；</li>
+<li>2  两个方法比较后结论：</li>
+</ul>
+<p>使用双引号比使用尖括号多了一个查找路径，它的功能更为强大！！建议同学们在做文件包含操作时，采用“双引号”的方式进行。</p>
+<h1 id="七、-用户自定义数据类型"><a href="#七、-用户自定义数据类型" class="headerlink" title="七、 用户自定义数据类型"></a>七、 用户自定义数据类型</h1><p><strong>整数类型（4种）：int short  unsigned  long</strong><br><strong>浮点型(2种):float   double</strong><br><strong>字符串(1种):char</strong>  </p>
+<h2 id="四、结构体"><a href="#四、结构体" class="headerlink" title="四、结构体"></a>四、结构体</h2><ul>
+<li>1  结构体类型的定义<br>格式如下：</li>
+</ul>
+<pre class=" language-C"><code class="language-C">struct  结构体类型名
+&#123;  类型名1   结构体成员名1;
+   类型名2   结构体成员名2;
+……
+类型名n    结构体成员名n;
+&#125;;
+</code></pre>
+<p>例如：  </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用12个字节</span>
+    <span class="token keyword">int</span>  age<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用2个字节</span>
+    <span class="token keyword">char</span> sex<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用1个字节</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*person数据类型定义完成，属于构造数据类型*/</span>
+</code></pre>
+<p><code>person数据类型定义完成，属于构造数据类型</code><br>person是结构体类型名，它紧跟在关键字struct之后。通过一对花括号将内部成员(属性)括起，内部成员之间用分号间隔。其中：成员变量name、age、sex的数据类型不同。要注意花括号后的分号不能忽略。  </p>
+<ul>
+<li>2  结构体变量的定义<br>第一种方式：通过已构造好的结构体类型来定义结构体变量，其形式如下：<br><code>struct  结构体类型名  结构体变量名;</code><br>结构体变量名应是一个合法的标识符。利用前一节所定义好的结构体类型person来定义结构体变量：<br> struct  person  p1;<br> 定义p1为person结构体类型的变量，<code>变量p1占用15个字节的内存单元</code>。注意：在这里<strong>struct关键字不能缺省</strong>。<br> 第二种方式：在构造结构体类型的同时定义结构体变量，其形式如下：</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  结构体类型名
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 结构体成员列表<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>结构体变量名<span class="token number">1</span><span class="token punctuation">,</span>……<span class="token punctuation">,</span>结构体变量名n<span class="token punctuation">;</span>
+</code></pre>
+<p>结构体变量名在花括号后直接给出，多个变量之间用逗号隔开，最后一个变量名后要用分号结束。例如：  </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span>  age<span class="token punctuation">;</span>
+   <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>p2<span class="token punctuation">,</span>p3<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//定义了p2和p3为person结构体类型的变量。</span>
+</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person  p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+或：
+<span class="token keyword">struct</span>  person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span>  age<span class="token punctuation">;</span>
+   <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lili"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>注意：初始化时，值的类型要与结构体的成员类型对应一致。</code>  </p>
+<ul>
+<li>3  结构体成员的引用<br>使用结构体成员之前，必须定义结构体变量。通过成员运算符“.”引用结构体成员。引用结构体成员的基本形式为：   <center><font color=red size=4>结构体变量名.结构体成员名</font></center>  
+&#160; 成员运算符“.”在所有运算符中的优先级最高，应将这种引用形式看作一个整体，其性质与其它的普通变量完全相同。比如，用引用结构体变量p1成员age格式为：p1.age，p1.age 应被看一个成整体，p1.age++是对p1.age自增，而不是对age自增，age是整型，所以p1.age在使用中与普通的整型变量使用方法一样。</li>
+</ul>
+<p>&amp;#160; 程序举例：对张三和李四的数据信息进行输出操作。  </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p1<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p1<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p2<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 程序运行结果：  </span>
+<span class="token comment" spellcheck="true">// zhangsan,20,m</span>
+<span class="token comment" spellcheck="true">// lisi,21,f</span>
+</code></pre>
+<ul>
+<li>4  结构体数组的定义<br>定义结构体数组与定义结构体变量相类似，其格式如下：<br>struct  结构体类型名  结构体数组名[长度];<br>结构体数组名应是一个合法的标识符。例如：  <center><font color=black size=5>struct  person  p[10];</font></center>  
+&#160; 表示p为person类型的结构体数组，其有10个数组元素，每个元素都是struct  person类型变量。</li>
+</ul>
+<p>&amp;#160;例如：  </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+  <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
+  <span class="token keyword">char</span> addr<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> person p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"sunlin"</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">"beijing"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+                       <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"xiaohua"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">"shanghai"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"yanglan"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token string">"fujian"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>5  结构体数组对结构体成员的引用<br>&amp;#160; 对结构体数组的访问和对普通数组的一样，也是用：数组名[下标]来确定结构体数组元素。结构体数组元素即为结构体类型变量，所以引用结构体数组元素的成员时，也要使用成员运算符“.”。其一般格式是：  <center><font color=black size=5> 数组名[下标].成员名</font></center>  
+&#160;如在上节例中：p[1].age表示是结构体数组p中的第二个数组元素中的成员age，它的值为20。</li>
+</ul>
+<p>也可以对引用的数据进行修改，比如修改此处的年龄，<strong>可以用p[1].age&#x3D;23，那么此时小华的年龄被更改为23岁</strong>。</p>
+<h2 id="五、结构体和指针"><a href="#五、结构体和指针" class="headerlink" title="五、结构体和指针"></a>五、结构体和指针</h2><ul>
+<li>1  结构体指针变量的定义及其引用<br>结构体指针用于指向结构体变量，即指向结构体变量在存储区域的起始地址，它是一个指针变量。其定义格式是：  <center><font color=red size=5> struct  结构体类型名  *指针变量名</font></center>    
+例如：</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person  <span class="token operator">*</span>p<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>“zhangsan”<span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span>’m’<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+           p <span class="token operator">=</span> <span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
+</code></pre>
+<p>&amp;#160; 通过结构体类型struct  person 定义一个指针变量p，并把结构体变量p1的首地址赋值给p,此时，指针变量p也就指向了结构体变量p1的首地址。以后便可以通过指针变量p引用结构体变量p1的成员了。一个指针变量引用结构体变量的成员格式有以下两种：  </p>
+<center><font color=black size=4>格式一：（*指针变量名）.结构体成员名</font></center>  
+<center><font color=red size=4>格式二： 指针变量名->结构体成员名</font></center>   
+&#160; 注意：格式一的圆括号不能省略，因为成员运算符“.”的优先级别比指针运算符“*”高。（*指针变量名）表示该指针变量所指向的结构体变量。   
+
+<p>例如,通过指针变量p来引用结构体成员age，可用形如: </p>
+<pre><code>(*p).age 
+或者：p-&gt;age
+</code></pre>
+<p>&amp;#160; 以上两种形式都是利用指针变量p引用结构体中的成员age，结果都等价于p1.age。  </p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
+<span class="token keyword">struct</span> person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> person p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> person <span class="token operator">*</span>q<span class="token punctuation">;</span>
+    q<span class="token operator">=</span><span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p1<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p1<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token operator">=</span><span class="token operator">&amp;</span>p2<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p2<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="六、typedef定义类型别名"><a href="#六、typedef定义类型别名" class="headerlink" title="六、typedef定义类型别名"></a>六、typedef定义类型别名</h2><p>C语言中，用关键字typedef定义类型的别名。用户运用typedef便可以将之前的类型名用一个新的名称来代替，其作用在<strong>简化程序的同时也增强了程序的可读性</strong>。  </p>
+<ul>
+<li>1  用typedef定义类型别名的格式：<br><font color=red>typedef  原类型名   新类型名;</font><br>typedef  int  INTEGER; &#x2F;<em>定义INTEGER为int的类型别名</em>&#x2F;<br>INTEGER  i;  等价于：  int  i;</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> person
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>Person<span class="token punctuation">,</span><span class="token operator">*</span>PERSON<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*等价于 strcut person p1*/</span>
+    Person p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    PERSON q<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/* 等价于Person *q */</span>
+    q<span class="token operator">=</span><span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token operator">=</span><span class="token operator">&amp;</span>p2<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="七、链表的定义"><a href="#七、链表的定义" class="headerlink" title="七、链表的定义"></a>七、链表的定义</h2><p>链表是程序设计中经常使用到的一种重要的数据结构。链表由若干个被称为结点（如下图表示一个结点）的元素组成。每个结点包含两部分信息：一是数据部分（域），存放任何类型的需要处理的数据，二是指针部分（域），存放指向下一个结点的地址。在C语言中“结点”通常用结构体来表示。<br><img src="https://iaimi.info/images/2022/04/05/Node01.png"><br>运用结构体可方便的定义结点，具体定义格式如下：  </p>
+<pre class=" language-c"><code class="language-c"> <span class="token keyword">struct</span>  结构体类型名
+        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 数据成员类表
+　　　　　<span class="token keyword">struct</span> 结构体类型名 <span class="token operator">*</span>  指针变量名 <span class="token punctuation">;</span>
+　　　　<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>其中两个结构体类型名相同，指针变量名用“struct &lt;结构体类型名&gt; *”定义，表示该指针变量指向同一种结构体类型的数据。依据该格式来创建一个结点如下：  </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  node
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+  <span class="token keyword">struct</span> node  <span class="token operator">*</span> next<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>其中：结构体类型struct node为所定义的结点类型，data表示该结点中存储的数据，为整型； next被定义成struct node类型的指针变量，它指向类型为struct node结构体的结点。<br>例：创建一张如下图的简单链表，并依次输出结点的数据。<br><img src="https://iaimi.info/images/2022/04/05/Node02.png"><br>程序代码：  </p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> node
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> score<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> node <span class="token operator">*</span> next<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>Node<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node p1<span class="token punctuation">,</span>p2<span class="token punctuation">,</span>p3<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>q<span class="token punctuation">;</span>
+    p1<span class="token punctuation">.</span>num<span class="token operator">=</span><span class="token number">10121</span><span class="token punctuation">;</span>
+    p1<span class="token punctuation">.</span>score<span class="token operator">=</span><span class="token number">85</span><span class="token punctuation">;</span>
+    p2<span class="token punctuation">.</span>num<span class="token operator">=</span><span class="token number">10133</span><span class="token punctuation">;</span>
+    p2<span class="token punctuation">.</span>score<span class="token operator">=</span><span class="token number">87.5</span><span class="token punctuation">;</span>
+    p3<span class="token punctuation">.</span>num<span class="token operator">=</span><span class="token number">10137</span><span class="token punctuation">;</span>
+    p3<span class="token punctuation">.</span>score<span class="token operator">=</span><span class="token number">91</span><span class="token punctuation">;</span>
+    
+    q<span class="token operator">=</span><span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
+    p1<span class="token punctuation">.</span>next<span class="token operator">=</span><span class="token operator">&amp;</span>p2<span class="token punctuation">;</span>
+    p2<span class="token punctuation">.</span>next<span class="token operator">=</span><span class="token operator">&amp;</span>p3<span class="token punctuation">;</span>
+    p3<span class="token punctuation">.</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d,%.2lf\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>num<span class="token punctuation">,</span>q<span class="token operator">-></span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        q<span class="token operator">=</span>q<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 程序运行结果：  </span>
+<span class="token comment" spellcheck="true">/*10121,85.00
+10133,87.50
+10137,91.00*/</span>
+</code></pre>
+<h2 id="八、链表结点空间的申请与释放"><a href="#八、链表结点空间的申请与释放" class="headerlink" title="八、链表结点空间的申请与释放"></a>八、链表结点空间的申请与释放</h2><ul>
+<li>1  结点空间的分配<br>在创建链表中的结点时，必须为结点申请分配内存空间，用于存放结点中的数据。为结点申请分配内存空间由库函数malloc(&lt;长度&gt;)来完成，该函数原型如下：  <center><font color=black size=4>void * malloc(unsigned int size);</font></center></li>
+</ul>
+<p>其作用是在内存的动态存储区域分配一个长度为size的连续空间，函数的返回值是一个指向分配域起始地址的指针，若分配不成功，则返回空指针NULL。形参size表示申请的空间长度，为整型常量，<strong>其值等于结点中各个成员字节数的总和</strong>。  </p>
+<center><font color=red size=4>void*是基类型指针（原始指针，无类型指针）</font></center>   
+<font color=red size=3>注意：1.malloc中的参数size不要直接使用具体的数值来表示，而应该采用sizeof来求得所需要的结点内存空间的大小；
+
+<p>2.malloc函数的返回值类型是void*，在使用时，必须将其强制转换成所需要的结点指针类型方可正常赋值；</p>
+<p>3.使用malloc函数需要导入头文件stdlib.h,实际上free函数也在这个头文件中。</font>  </p>
+<ul>
+<li>2  结点空间的释放<br>如果一个结点没有存在的价值，要从链表中删除它，则应该释放其所占用的内存空间。释放结点空间由函数free(&lt;指针变量&gt;)完成，该函数的原型如下：  <center><font color=black size=3>void free(void * p);</font></center>    
+其作用是释放由指针变量p指向的内存空间，被释放的内存空间又可以被其他的变量使用。free函数无返回值。</li>
+</ul>
+<h2 id="九、链表的基本操作"><a href="#九、链表的基本操作" class="headerlink" title="九、链表的基本操作"></a>九、链表的基本操作</h2><ul>
+<li><p>1.链表结点的定义操作  </p>
+</li>
+<li><p>2.链表的初始化操作  </p>
+</li>
+<li><p>3.链表的创建  </p>
+</li>
+<li><p>4.链表结点的输出操作  </p>
+</li>
+<li><p>5.求链表的长度  </p>
+</li>
+<li><p>6.链表结点的插入操作  </p>
+</li>
+<li><p>7.链表结点的删除操作（按位置删除或按值删除）</p>
+</li>
+</ul>
+<hr>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdlib.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> TRUE 1</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> FALSE 0</span>
+<span class="token keyword">typedef</span> <span class="token keyword">int</span> Status<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> node
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    ElemType data<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> node <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>Node<span class="token punctuation">,</span><span class="token operator">*</span>LinkList<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*InitList初始化链表的操作，初始化成功须返回头结点的地址*/</span>
+LinkList <span class="token function">InitList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>head<span class="token punctuation">;</span>
+    head<span class="token operator">=</span><span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    head<span class="token operator">-></span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*创建具有n个结点的单链表*/</span>
+<span class="token keyword">void</span> <span class="token function">CreateList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    r<span class="token operator">=</span>L<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        s<span class="token operator">=</span><span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s<span class="token operator">-></span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+        
+        r<span class="token operator">-></span>next<span class="token operator">=</span>s<span class="token punctuation">;</span>
+        r<span class="token operator">=</span>s<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*单链表数据的输出操作*/</span>
+<span class="token keyword">void</span> <span class="token function">PrintList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>r<span class="token operator">=</span>L<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表中的数据:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">-></span>next<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>r<span class="token operator">-></span>next<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*求单链表的长度*/</span>
+<span class="token keyword">int</span> <span class="token function">LengthList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>r<span class="token operator">=</span>L<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> counter<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">-></span>next<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        counter<span class="token operator">++</span><span class="token punctuation">;</span>
+        r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> counter<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*单链表的插入操作*/</span>
+Status <span class="token function">InsertList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span>ElemType e<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+    r<span class="token operator">=</span>L<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span><span class="token operator">||</span>i<span class="token operator">></span><span class="token function">LengthList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token number">-1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    
+    s<span class="token operator">=</span><span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token operator">-></span>data<span class="token operator">=</span>e<span class="token punctuation">;</span>
+    
+    s<span class="token operator">-></span>next<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*先连接后面，再连接前面，才能保证第i个位置的指针不丢失*/</span>
+    r<span class="token operator">-></span>next<span class="token operator">=</span>s<span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*单链表的删除操作*/</span>
+Status <span class="token function">DeleteList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+    r<span class="token operator">=</span>L<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span><span class="token operator">||</span>i<span class="token operator">></span><span class="token function">LengthList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*让r指向链表中的第i-1个位置*/</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token number">-1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    
+    <span class="token comment" spellcheck="true">/*删除第i个位置的结点*/</span>
+    s<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    r<span class="token operator">-></span>next<span class="token operator">=</span>s<span class="token operator">-></span>next<span class="token punctuation">;</span>
+    
+    <span class="token function">free</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*释放所删除的结点*/</span>
+    
+    <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+       LinkList L<span class="token punctuation">;</span>
+       L<span class="token operator">=</span><span class="token function">InitList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">CreateList</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment" spellcheck="true">/*PrintList(L);
+       printf("当前链表的长度是:%d\n",LengthList(L));
+       */</span>
+       <span class="token function">InsertList</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">PrintList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"当前链表的长度是:%d\n"</span><span class="token punctuation">,</span><span class="token function">LengthList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">DeleteList</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">DeleteList</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">PrintList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"当前链表的长度是:%d\n"</span><span class="token punctuation">,</span><span class="token function">LengthList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>输出结果：<br><img src="https://iaimi.info/images/2022/04/05/2022-04-05-171938.png">  </p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.iaimi.cn" rel="external nofollow noreferrer">Kirino</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.iaimi.cn/posts/34549.html">https://blog.iaimi.cn/posts/34549.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.iaimi.cn" target="_blank">Kirino</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
+                                </a>
+                            
+                                <a href="/tags/Docs/">
+                                    <span class="chip bg-color">Docs</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'nNELfD9afYAKVzEtjiFA0d1u-gzGzoHsz',
+        appKey: 'C0LRg8jidfP8Fn5kFgc5sKxt',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/51855.html">
+                    <div class="card-image">
+                        
+                        <img src="https://iaimi.cn/images/2022/04/07/mmexport60dfc23a11cbbd695a924297a2ce41dd_1649314571474.gif" class="responsive-img" alt="贪心算法">
+                        
+                        <span class="card-title">贪心算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            贪心算法编程实现背包问题的求解，首先定义5件物品的重量分别是1、2、3、4、5，对应收益分别是3、10、6、3、5，总重量限制为10。要求输出：
+（1）背包的最大收益；  
+
+（2）最大收益情况下各种物品放入背包的对应比例；Xi。
+
+
+
+G
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/Go/">
+                        <span class="chip bg-color">Go</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">算法设计与分析</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/40445.html">
+                    <div class="card-image">
+                        
+                        <img src="https://iaimi.cn/images/2022/03/15/mmexport1647275804074.jpg" class="responsive-img" alt="单链表的实现C语言">
+                        
+                        <span class="card-title">单链表的实现C语言</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            C语言单链表的实现具体实现：
+1 链表结点的定义操作
+2 链表的初始化操作
+3.链表的创建
+4.链表结点的输出操作
+5.求链表的长度
+6.链表结点的插入操作
+7.链表结点的删除操作（按位置删除）
+8 单链表的查找(实现单链表的查找操作，查找
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Kirino
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7361088572"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.4'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://blog.iaimi.cn" target="_blank">Kirino</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "4";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "网站在各种灾难中运行了 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "网站在各种灾难中运行了 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <!-- <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2022002262号-2</a>
+            </span> -->
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2022002262号-2</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Clov614" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zhenghongyi1225@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=541982545" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 541982545" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+        <div class="col s12 m4 l4" align=center>  图片外链由<a href="https://iaimi.info/upload/" target="_blank"> <img
+            src="../logo_m.png" width="17%" />自己提供</a>
+        </div>   
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"abbrlink":{"alg":"crc16","crc16(default) and crc32 rep":"hex"},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+ 
+<script src="/js/cursor.js"></script>
+
+<script type="text/javascript">
+    var OriginTitile=document.title,st;
+	document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="(▼ _ ▼) 404 NOT FOUND",clearTimeout(st)):(document.title="(ﾉ≧∀≦)200 OK!",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
