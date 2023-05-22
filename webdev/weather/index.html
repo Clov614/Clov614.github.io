@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气查询</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./index.css" type="text/css">
+</head>
+
+<body>
+
+    <div id="app">
+        <el-row class="header">
+            <h1>天气查询</h1>
+        </el-row>
+        <img class="headerImg" src="./images/weather1.jpg" alt="天气图">
+        <el-col class="container">
+            <el-row class="queryInput">
+                <!-- 在 Vue 2.0 中，为自定义组件绑定原生事件必须使用 .native 修饰符，只有Button 组件可以监听 click 事件 -->
+                <el-input id="queryInput" v-model="city" @keyup.enter.native="searchWeather"
+                    placeholder="请输入查询的城市"></el-input>
+                <el-button type="primary" @click="searchWeather">查询</el-button>
+            </el-row>
+            <el-row class="hotKey">
+                <el-tag v-for="(item,index) in cityList" @click="clickCity(item)">{{ item }}</el-tag>
+            </el-row>
+            <!-- <el-row class="weather">
+                <ul class="weather_list">
+                    <li>
+                        <p>1</p>
+                    </li>
+                    <li>
+                        <p>12</p>
+                    </li>
+                    <li>
+                        <p>3</p>
+                    </li>
+                </ul>
+            </el-row> -->
+            <!-- <el-row :gutter="20" id="weather"> -->
+            <el-row class="weather_list">
+                <div class="grid-content bg-purple" v-for="item in weatherList">
+                    <span>{{ item.dayweather }}</span>
+                    <p>{{ item.nighttemp }}~{{ item.daytemp }}℃</p>
+                    <p>{{ item.date.split("-")[1]}}月{{ item.date.split("-")[2]}}日</p>
+                    <p>{{ week[item.week] }}</p>
+                </div>  
+            </el-row>
+        </el-col>
+    </div>
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <!-- element-ui 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <!-- import axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 自己的js -->
+    <script src="./main.js"></script>
+</body>
+
+</html>

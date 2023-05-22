@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>java中的 Arrays.asList() 方法是什么</title>
+      <link href="/posts/11122.html"/>
+      <url>/posts/11122.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="java中的-Arrays-asList-方法是什么"><a href="#java中的-Arrays-asList-方法是什么" class="headerlink" title="java中的 Arrays.asList() 方法是什么"></a>java中的 Arrays.asList() 方法是什么</h1><p>Arrays.asList() 方法将数组转换为 List。它允许将数组作为列表来操作。</p><p>语法是:</p><p><code>Arrays.asList(T... a)</code></p><p>它接收可变数量的参数,并将它们作为数组,然后转换为 List。</p><p>例如:</p><pre class=" language-java"><code class="language-java">String<span class="token punctuation">[</span><span class="token punctuation">]</span> strs <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>现在 list 是一个 List,包含 [“a”, “b”, “c”]。</p><p>需要注意的是:</p><ol><li>返回的 List 是Arrays类的内部类,并不是 ArrayList。它基本上只是数组的view,所以修改这个List也会修改原数组。</li><li>由于1,asList返回的List的size是固定的,不支持add&#x2F;remove等方法。如果需要这些方法,可以这样写:</li></ol><pre class=" language-java"><code class="language-java">List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><ol start="3"><li>asList只能用于对象数组,对于原始类型的数组如int[],应使用Arrays.stream()或IntStream等。</li></ol><p>Arrays.asList()是将数组快速转换为列表的好方法,但是返回的列表不是一个完整的列表实现,有一定的限制,需要注意。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java 中的 :: 是什么符号</title>
       <link href="/posts/16752.html"/>
       <url>/posts/16752.html</url>
@@ -373,9 +392,9 @@
       
         <tags>
             
-            <tag> Docs </tag>
-            
             <tag> C语言 </tag>
+            
+            <tag> Docs </tag>
             
         </tags>
       
