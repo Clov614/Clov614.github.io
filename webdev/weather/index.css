@@ -27,18 +27,22 @@
 }
 .queryInput {
     display: flex;
+    justify-content: center;
     width: 500px;
 }
 .queryInput el-input{
     flex: 1;
-    width: 300px;
+    width: 100px; 
 }
-.queryInput el-button{
-    flex: 1;
-    width: 100px;
+.el-input{
+    width: auto;
+}
+.el-input__inner{
+    width: 200px;
 }
 .hotKey{
-    margin-left: -260px;
+    display: flex;
+    justify-content: center;
 }
 /* ul{
     list-style: none;
