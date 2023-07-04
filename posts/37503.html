@@ -408,7 +408,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-10
+                    2023-07-05
                 </div>
                 
 
@@ -429,7 +429,55 @@
             <div id="articleContent">
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>学习github编程的初衷时能接触到目前主流的新技术，并且在未来能对此做出贡献。<br><img src="/../images/cover/107717428_p0_master1200.jpg">    </p>
 <hr>
-<h1 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h1><h2 id="git-init-—-初始化仓库"><a href="#git-init-—-初始化仓库" class="headerlink" title="git init — 初始化仓库"></a>git init — 初始化仓库</h2><p>进行版本管理<br>需要实际建立一个目录并初始化仓库<br>这个目录一般称为工作树  </p>
+<h2 id="Git-拓展or技巧"><a href="#Git-拓展or技巧" class="headerlink" title="Git 拓展or技巧"></a>Git 拓展or技巧</h2><h3 id="2023-x2F-07-x2F-05-Git合并多个commit为一个"><a href="#2023-x2F-07-x2F-05-Git合并多个commit为一个" class="headerlink" title="2023&#x2F;07&#x2F;05 Git合并多个commit为一个"></a>2023&#x2F;07&#x2F;05 Git合并多个commit为一个</h3><p>要准备提交MR了，改了半天搞了很多个commit，都push上去了，但是提交MR的时候要合成一个commit，咋搞呢？</p>
+<ol>
+<li>合并commit之前<br>比如我现在有4个 commit ID，从新到旧分别为：</li>
+</ol>
+<blockquote>
+<p>85d5d8fa468b06bb9a62fafde01d80cbb7396682 # 我改的</p>
+<p>621ca4121f971d9604e395556763551427d799d9 # 我改的</p>
+<p>f744d2e91916ab7831f3a7695d1d1825916db164 # 我改的</p>
+<p>5c135e49e683563fa470d7f5c281050ec1d73af9 # 我改的</p>
+<p>295ac3b842b4ecb6eff1c9954a281a4606a8bc84 # 别人改的</p>
+</blockquote>
+<ol start="2">
+<li>合并commit之后<br>我想把我改的 commit ID 全部合成一个新的 commit ID ：</li>
+</ol>
+<blockquote>
+<p>8403afe13664d6bb7f5a5557716a030e9389a944 # 我改的</p>
+<p>295ac3b842b4ecb6eff1c9954a281a4606a8bc84 # 别人改的</p>
+</blockquote>
+<h4 id="Func1-先从版本库回退内容到暂存区，再重新提交工作区的内容"><a href="#Func1-先从版本库回退内容到暂存区，再重新提交工作区的内容" class="headerlink" title="Func1: 先从版本库回退内容到暂存区，再重新提交工作区的内容"></a>Func1: 先从版本库回退内容到暂存区，再重新提交工作区的内容</h4><p>思路：使用 git reset –soft 回退版本库和暂存区的版本，同时保留工作区的变动，之后再重新提交工作区的内容就好了。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看前10个commit</span>
+<span class="token function">git</span> log -10
+<span class="token comment" spellcheck="true"># 从版本库恢复文件到暂存区，不改动工作区的内容</span>
+<span class="token function">git</span> reset --soft 295ac3b842b4ecb6eff1c9954a281a4606a8bc84	<span class="token comment" spellcheck="true"># 别人改的commitID</span>
+<span class="token comment" spellcheck="true"># add已经跟踪的文件</span>
+<span class="token function">git</span> add -u
+<span class="token comment" spellcheck="true"># 提交</span>
+<span class="token function">git</span> commit -m <span class="token string">"修改信息"</span>
+<span class="token comment" spellcheck="true"># 强制push以替换远程仓的commitID</span>
+<span class="token function">git</span> push --force
+</code></pre>
+<p>如果push失败，出现Reject，则需要开启分支强制合入的选项，取消分支保护。</p>
+<blockquote>
+<p>Settings -&gt; Repository -&gt; Protected Branches -&gt; Protected branch （找到分支） -&gt; Unprotect</p>
+</blockquote>
+<h4 id="Func2-git-rebase"><a href="#Func2-git-rebase" class="headerlink" title="Func2: git rebase"></a>Func2: git rebase</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看前10个commit</span>
+<span class="token function">git</span> log -10
+<span class="token comment" spellcheck="true"># 将4个commit压缩成一个commit</span>
+<span class="token function">git</span> rebase -i HEAD~4	
+<span class="token comment" spellcheck="true"># add已经跟踪的文件</span>
+<span class="token function">git</span> add -u
+<span class="token comment" spellcheck="true"># 提交</span>
+<span class="token function">git</span> commit -m <span class="token string">"修改信息"</span>
+<span class="token comment" spellcheck="true"># 强制push以替换远程仓的commitID</span>
+<span class="token function">git</span> push --force
+</code></pre>
+<blockquote>
+<p>tips: <code>git rebase</code> 会临时创建一个新分支进行，如果弄着出错了，可以 <code>git checkout 原分支名</code> 切换回原分支之后重新 <code>git rebase</code>。</p>
+</blockquote>
+<h2 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h2><h2 id="git-init-—-初始化仓库"><a href="#git-init-—-初始化仓库" class="headerlink" title="git init — 初始化仓库"></a>git init — 初始化仓库</h2><p>进行版本管理<br>需要实际建立一个目录并初始化仓库<br>这个目录一般称为工作树  </p>
 <h2 id="git-status-—-查看仓库的状态"><a href="#git-status-—-查看仓库的状态" class="headerlink" title="git status — 查看仓库的状态"></a>git status — 查看仓库的状态</h2><h2 id="git-add-—-向暂存区中添加文件"><a href="#git-add-—-向暂存区中添加文件" class="headerlink" title="git add — 向暂存区中添加文件"></a>git add — 向暂存区中添加文件</h2><p>要想让文件成为Git仓库的管理对象，就需要用git add 命令将其加入暂存区。<br>暂存区是提交之前的一个临时区域  </p>
 <h2 id="git-commit-—-保存仓库的历史纪录"><a href="#git-commit-—-保存仓库的历史纪录" class="headerlink" title="git commit — 保存仓库的历史纪录"></a>git commit — 保存仓库的历史纪录</h2><ul>
 <li><h3 id="记述一行提交信息"><a href="#记述一行提交信息" class="headerlink" title="记述一行提交信息"></a>记述一行提交信息</h3></li>
