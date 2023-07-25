@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -445,7 +445,7 @@
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/dwXK"><img src="https://iaimi.cn/images/2022/03/11/AA00BC40-4C18-4291-B992-7057FFC3EBDE.jpg" alt="AA00BC40-4C18-4291-B992-7057FFC3EBDE.jpg"></a>   </p>
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/dku5"><img src="https://iaimi.cn/images/2022/03/11/8F6C3418-4A4E-4AE9-868C-1396C0B5D5C3.jpg" alt="8F6C3418-4A4E-4AE9-868C-1396C0B5D5C3.jpg"></a>   </p>
 <ul>
-<li><h4 id="原件-gt-lt"><a href="#原件-gt-lt" class="headerlink" title="原件:  &gt;.&lt;!!"></a>原件:  &gt;.&lt;!!</h4></li>
+<li><h4 id="原件"><a href="#原件" class="headerlink" title="原件:  &gt;.&lt;!!"></a>原件:  &gt;.&lt;!!</h4></li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/diDg"><img src="https://iaimi.cn/images/2022/03/11/IMG_20220311_115816.jpg" alt="IMG_20220311_115816.jpg"></a>   </p>
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/d1da"><img src="https://iaimi.cn/images/2022/03/11/IMG_20220311_115806.jpg" alt="IMG_20220311_115806.jpg"></a></p>
@@ -455,25 +455,25 @@
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-func hannuota<span class="token punctuation">(</span>n int, A, B, C string<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> 1 <span class="token operator">||</span> n <span class="token operator">></span> 20 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+func hannuota<span class="token punctuation">(</span>n int, A, B, C string<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> 1 <span class="token operator">||</span> n <span class="token operator">></span> 20 <span class="token punctuation">{</span>
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token keyword">if</span> n <span class="token operator">==</span> 1 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> n <span class="token operator">==</span> 1 <span class="token punctuation">{</span>
         fmt.Printf<span class="token punctuation">(</span><span class="token string">"盘子%d从%s柱子移动到%s柱子\n"</span>, n, A, C<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125; else &amp;#123;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
         hannuota<span class="token punctuation">(</span>n-1, A, C, B<span class="token punctuation">)</span>
         fmt.Printf<span class="token punctuation">(</span><span class="token string">"盘子%d从%s柱子移动到%s柱子\n"</span>, n, A, C<span class="token punctuation">)</span>
         hannuota<span class="token punctuation">(</span>n-1, B, A, C<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-func main<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+func main<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     a, b, c :<span class="token operator">=</span> <span class="token string">"A"</span>, <span class="token string">"B"</span>, <span class="token string">"C"</span>
     var val int
     fmt.Println<span class="token punctuation">(</span><span class="token string">"请输入要移动的盘子数（1-20之间）：N="</span><span class="token punctuation">)</span>
     fmt.Scanf<span class="token punctuation">(</span><span class="token string">"%d"</span>, <span class="token operator">&amp;</span>val<span class="token punctuation">)</span>
     hannuota<span class="token punctuation">(</span>val, a, b, c<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/K0jA"><img src="https://iaimi.cn/images/2022/03/10/2022-03-10-211341.png" alt="2022-03-10-211341.png"></a>  </p>
 <ul>
@@ -483,32 +483,32 @@ func main<span class="token punctuation">(</span><span class="token punctuation"
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">func</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> c <span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> c <span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     x<span class="token punctuation">,</span> y <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span>
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
         c <span class="token operator">&lt;-</span> x
         x<span class="token punctuation">,</span> y <span class="token operator">=</span> y<span class="token punctuation">,</span> x<span class="token operator">+</span>y
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token function">close</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> v <span class="token builtin">int</span>
 
     <span class="token keyword">var</span> fib <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
     c <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
     <span class="token keyword">go</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span><span class="token function">cap</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> c <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> c <span class="token punctuation">{</span>
         fib <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>fib<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     fmt<span class="token punctuation">.</span><span class="token function">Scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>v<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"第%d项是%v\n"</span><span class="token punctuation">,</span> v<span class="token punctuation">,</span> fib<span class="token punctuation">[</span>v<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token keyword">var</span> sum <span class="token builtin">int</span>
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> v<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> v<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
         sum <span class="token operator">+=</span> fib<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"前%d项和是%d\n"</span><span class="token punctuation">,</span> v<span class="token punctuation">,</span> sum<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/KKTT"><img src="https://iaimi.cn/images/2022/03/10/2022-03-10-211629.png" alt="2022-03-10-211629.png"></a>  </p>
 <ul>
@@ -526,60 +526,60 @@ func main<span class="token punctuation">(</span><span class="token punctuation"
 var count int <span class="token operator">=</span> 0
 //使用一维数组表示棋盘 第i个元素表示第i个皇后，第i行，值表示该皇后在第几列
 var data <span class="token punctuation">[</span><span class="token punctuation">]</span>int <span class="token operator">=</span> make<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>int, 8<span class="token punctuation">)</span>
-func main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+func main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 
     
 
 
     put<span class="token punctuation">(</span>0<span class="token punctuation">)</span>
     fmt.Println<span class="token punctuation">(</span>count<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 //思路： 首先，需要有一个放置皇后的方法
-func put<span class="token punctuation">(</span>n int<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+func put<span class="token punctuation">(</span>n int<span class="token punctuation">)</span><span class="token punctuation">{</span>
     //当放置的n为8时，即为第9个皇后  因为数组从0开始
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> 8<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> 8<span class="token punctuation">)</span><span class="token punctuation">{</span>
         // fmt.Println<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
         fmt.Printf<span class="token punctuation">(</span><span class="token string">"方案%d:"</span>,count+1<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i:<span class="token operator">=</span>0 <span class="token punctuation">;</span> i <span class="token operator">&lt;</span>8<span class="token punctuation">;</span> i++<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token keyword">for</span> i:<span class="token operator">=</span>0 <span class="token punctuation">;</span> i <span class="token operator">&lt;</span>8<span class="token punctuation">;</span> i++<span class="token punctuation">{</span>
             fmt.Printf<span class="token punctuation">(</span><span class="token string">" %d行%d列 "</span>,i+1,data<span class="token punctuation">[</span>i<span class="token punctuation">]</span>+1<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        <span class="token punctuation">}</span>
         fmt.Println<span class="token punctuation">(</span><span class="token punctuation">)</span>
         count++
         <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token punctuation">}</span>
     //如果不是第9个皇后，那么就遍历来放置第1到8个皇后
-    <span class="token keyword">for</span> i :<span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 8<span class="token punctuation">;</span> i ++<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token keyword">for</span> i :<span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 8<span class="token punctuation">;</span> i ++<span class="token punctuation">{</span>
         //先把当前的子n 放在i这个位置上
         data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> i
         //判断该点是否可以进行落子
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>check<span class="token punctuation">(</span>n<span class="token punctuation">))</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>check<span class="token punctuation">(</span>n<span class="token punctuation">))</span><span class="token punctuation">{</span>
             put<span class="token punctuation">(</span>n + 1<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 //检查皇后是否在同一列或者在同一斜线
-func check<span class="token punctuation">(</span>n int<span class="token punctuation">)</span> bool<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token keyword">for</span> i :<span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i++<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+func check<span class="token punctuation">(</span>n int<span class="token punctuation">)</span> bool<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> i :<span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i++<span class="token punctuation">{</span>
         //第一个 data<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> data<span class="token punctuation">[</span>n<span class="token punctuation">]</span>  我们此处用下标代表第几行  用数值代表第几列  那么当第i行的皇后与第n行的皇后在同一列
         //就不符合题意了
         //第二个  abs<span class="token punctuation">(</span>data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> - data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> abs<span class="token punctuation">(</span>i - n<span class="token punctuation">)</span>   n 和 i代表皇后的横坐标  data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> data<span class="token punctuation">[</span>i<span class="token punctuation">]</span>代表皇后的纵坐标  那么两个皇后横坐标相减  纵坐标相减相同时
         //其两个皇后构成了一个与棋盘45°的夹角，棋盘是正方形，所以 此时两个皇后处在同一斜线上
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">||</span> abs<span class="token punctuation">(</span>data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> - data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> abs<span class="token punctuation">(</span>i - n<span class="token punctuation">))</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">||</span> abs<span class="token punctuation">(</span>data<span class="token punctuation">[</span>n<span class="token punctuation">]</span> - data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> abs<span class="token punctuation">(</span>i - n<span class="token punctuation">))</span><span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token boolean">false</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token boolean">true</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 
 
 //goLang没有整数的取绝对值方法  自己写一个
-func abs<span class="token punctuation">(</span>n int<span class="token punctuation">)</span> int<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> 0<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+func abs<span class="token punctuation">(</span>n int<span class="token punctuation">)</span> int<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> 0<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> -n
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> n
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><a target="_blank" rel="noopener" href="https://iaimi.cn/image/KG96"><img src="https://iaimi.cn/images/2022/03/10/2022-03-10-211723.png" alt="2022-03-10-211723.png"></a><br><a target="_blank" rel="noopener" href="https://iaimi.cn/image/KErf"><img src="https://iaimi.cn/images/2022/03/10/2022-03-10-211737.png" alt="2022-03-10-211737.png"></a><br><a target="_blank" rel="noopener" href="https://iaimi.cn/image/KrnG"><img src="https://iaimi.cn/images/2022/03/10/2022-03-10-211816.png" alt="2022-03-10-211816.png"></a></p>
 

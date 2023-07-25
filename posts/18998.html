@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -418,32 +418,32 @@
 <blockquote>
 <p>动窗口，维护left和right，每次取两个数作为基准，right向右滑动 ··如果fruits[right]不是其中的就更新新的数为基准将left直接移动到right前面一格，然后再向前找left相等的最前面的定位left。 ··如果fruits[right]是其中的就更新res</p>
 </blockquote>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">totalFruit</span><span class="token punctuation">(</span>fruits <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    cnt <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">totalFruit</span><span class="token punctuation">(</span>fruits <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    cnt <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
     left <span class="token operator">:=</span> <span class="token number">0</span>
     res <span class="token operator">:=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> right<span class="token punctuation">,</span> x <span class="token operator">:=</span> <span class="token keyword">range</span> fruits <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> right<span class="token punctuation">,</span> x <span class="token operator">:=</span> <span class="token keyword">range</span> fruits <span class="token punctuation">{</span>
         cnt<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">++</span>
-        <span class="token keyword">for</span> <span class="token function">len</span><span class="token punctuation">(</span>cnt<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">2</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token function">len</span><span class="token punctuation">(</span>cnt<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">2</span> <span class="token punctuation">{</span>
             y <span class="token operator">:=</span> fruits<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
             cnt<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">--</span>
 
-            <span class="token keyword">if</span> cnt<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> cnt<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
                 <span class="token function">delete</span><span class="token punctuation">(</span>cnt<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
             left<span class="token operator">++</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         res <span class="token operator">=</span> <span class="token function">MAX</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> right<span class="token operator">-</span>left<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> res
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">func</span> <span class="token function">MAX</span><span class="token punctuation">(</span>a <span class="token builtin">int</span><span class="token punctuation">,</span> b <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> a <span class="token operator">></span> b <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">MAX</span><span class="token punctuation">(</span>a <span class="token builtin">int</span><span class="token punctuation">,</span> b <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> a <span class="token operator">></span> b <span class="token punctuation">{</span>
         <span class="token keyword">return</span> a
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> b
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>

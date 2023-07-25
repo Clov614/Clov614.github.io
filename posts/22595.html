@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -447,7 +447,7 @@ s <span class="token operator">=</span> <span class="token string">'unite one un
 m4 <span class="token operator">=</span> re.findall<span class="token punctuation">(</span>r<span class="token string">'\b(?!un)\w+\b'</span>,s<span class="token punctuation">)</span>
 print<span class="token punctuation">(</span>m4<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#['one', 'ethics', 'use', 'ultimate']</span>
 
-m5 <span class="token operator">=</span> re.findall<span class="token punctuation">(</span>r<span class="token string">'(?&lt;![a-z])\d&amp;#123;3,&amp;#125;'</span>,<span class="token string">'abc123,123,4567'</span><span class="token punctuation">)</span>
+m5 <span class="token operator">=</span> re.findall<span class="token punctuation">(</span>r<span class="token string">'(?&lt;![a-z])\d{3,}'</span>,<span class="token string">'abc123,123,4567'</span><span class="token punctuation">)</span>
 print<span class="token punctuation">(</span>m5<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#['123', '4567']</span>
 </code></pre>
 

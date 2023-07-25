@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -436,11 +436,11 @@
 <span class="token comment" spellcheck="true"># hobbie = input("please input your hobbie:")</span>
 <span class="token comment" spellcheck="true">#</span>
 <span class="token comment" spellcheck="true"># msg = f'''                                #多行字符串格式</span>
-<span class="token comment" spellcheck="true"># ------------ cn of &amp;#123;Name&amp;#125; ------------</span>
-<span class="token comment" spellcheck="true"># Name   : &amp;#123;Name&amp;#125;</span>
-<span class="token comment" spellcheck="true"># Age    : &amp;#123;Age&amp;#125;</span>
-<span class="token comment" spellcheck="true"># job    : &amp;#123;job&amp;#125;</span>
-<span class="token comment" spellcheck="true"># hobbie : &amp;#123;hobbie&amp;#125;</span>
+<span class="token comment" spellcheck="true"># ------------ cn of {Name} ------------</span>
+<span class="token comment" spellcheck="true"># Name   : {Name}</span>
+<span class="token comment" spellcheck="true"># Age    : {Age}</span>
+<span class="token comment" spellcheck="true"># job    : {job}</span>
+<span class="token comment" spellcheck="true"># hobbie : {hobbie}</span>
 <span class="token comment" spellcheck="true"># ------------------ end ------------------</span>
 <span class="token comment" spellcheck="true"># '''</span>
 <span class="token comment" spellcheck="true"># print(msg)</span>
@@ -533,15 +533,15 @@ staffs <span class="token operator">=</span> <span class="token punctuation">[</
 <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1,301<span class="token punctuation">)</span>:            <span class="token comment" spellcheck="true">#1-300 （for循环）</span>
     staffs.append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>              <span class="token comment" spellcheck="true">#将1-300分别存入空列表</span>
 c <span class="token operator">=</span> random.sample<span class="token punctuation">(</span>staffs,30<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">#c为三等奖随机抽取的变量</span>
-print<span class="token punctuation">(</span>f<span class="token string">"三等奖获奖的员工分别为：&amp;#123;c&amp;#125;"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>f<span class="token string">"三等奖获奖的员工分别为：{c}"</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> c <span class="token keyword">in</span> staffs:
     staffs.remove<span class="token punctuation">(</span>c<span class="token punctuation">)</span>              <span class="token comment" spellcheck="true">#remove 删除了三等奖的员工，剩下的是未获奖的员工</span>
 b <span class="token operator">=</span> random.sample<span class="token punctuation">(</span>staffs,6<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>f<span class="token string">'二等奖获奖的员工分别为：&amp;#123;b&amp;#125;'</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>f<span class="token string">'二等奖获奖的员工分别为：{b}'</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> b <span class="token keyword">in</span> staffs:
     staffs.remove<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
 a <span class="token operator">=</span> random.sample<span class="token punctuation">(</span>staffs,3<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>f<span class="token string">'一等奖获奖的员工分别为：&amp;#123;a&amp;#125;'</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>f<span class="token string">'一等奖获奖的员工分别为：{a}'</span><span class="token punctuation">)</span>
 </code></pre>
 <ul>
 <li>output：</li>
@@ -555,17 +555,17 @@ print<span class="token punctuation">(</span>f<span class="token string">'一等
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>100<span class="token punctuation">)</span>:
     <span class="token keyword">if</span> i % 2 <span class="token operator">==</span> 0:
-        print<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;i&amp;#125;is 偶数"</span><span class="token punctuation">)</span>
+        print<span class="token punctuation">(</span>f<span class="token string">"{i}is 偶数"</span><span class="token punctuation">)</span>
     else:
-        print<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;i&amp;#125;is 奇数"</span><span class="token punctuation">)</span>
+        print<span class="token punctuation">(</span>f<span class="token string">"{i}is 奇数"</span><span class="token punctuation">)</span>
 </code></pre>
 <ul>
 <li><h3 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h3></li>
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1,10<span class="token punctuation">)</span>:
-    <span class="token comment" spellcheck="true">#print(f"&amp;#123;i&amp;#125;x1=&amp;#123;i&amp;#125;")</span>
+    <span class="token comment" spellcheck="true">#print(f"{i}x1={i}")</span>
     <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>1,i+1<span class="token punctuation">)</span>:
-        print<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;i&amp;#125;x&amp;#123;j&amp;#125;=&amp;#123;i*j&amp;#125;"</span>,end<span class="token operator">=</span><span class="token string">"  "</span><span class="token punctuation">)</span>
+        print<span class="token punctuation">(</span>f<span class="token string">"{i}x{j}={i*j}"</span>,end<span class="token operator">=</span><span class="token string">"  "</span><span class="token punctuation">)</span>
     print<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h1 id=""><a href="#" class="headerlink" title=""></a></h1><ul>
@@ -593,7 +593,7 @@ car_nums <span class="token operator">=</span> <span class="token punctuation">[
     <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>20<span class="token punctuation">)</span>:
         n1 <span class="token operator">=</span> random.choice<span class="token punctuation">(</span>string.ascii_uppercase<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#随机选取里面的任意一个对象</span>
         n2 <span class="token operator">=</span> <span class="token string">""</span>.join<span class="token punctuation">(</span>random.sample<span class="token punctuation">(</span>string.ascii_uppercase + string.digits, 5<span class="token punctuation">))</span>
-        c_num <span class="token operator">=</span> <span class="token punctuation">(</span>f<span class="token string">"京&amp;#123;n1&amp;#125;-&amp;#123;n2&amp;#125;"</span><span class="token punctuation">)</span>
+        c_num <span class="token operator">=</span> <span class="token punctuation">(</span>f<span class="token string">"京{n1}-{n2}"</span><span class="token punctuation">)</span>
         car_nums.append<span class="token punctuation">(</span>c_num<span class="token punctuation">)</span>
         print<span class="token punctuation">(</span>c_num,end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
         <span class="token keyword">if</span> i <span class="token operator">==</span> 4 or i <span class="token operator">==</span> 9 or i <span class="token operator">==</span> 14  <span class="token keyword">:</span>    <span class="token comment" spellcheck="true">#换行模块</span>
@@ -601,7 +601,7 @@ car_nums <span class="token operator">=</span> <span class="token punctuation">[
     print<span class="token punctuation">(</span><span class="token punctuation">)</span>                                  <span class="token comment" spellcheck="true">#换行模块</span>
     choice <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入你选择的车牌,如不满意请输入no:"</span><span class="token punctuation">)</span>.strip<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#strip 方法去掉头尾空格及特殊字符</span>
     <span class="token keyword">if</span> choice <span class="token keyword">in</span> car_nums:
-        print<span class="token punctuation">(</span>f<span class="token string">"恭喜您喜提新车牌：&amp;#123;choice&amp;#125;"</span><span class="token punctuation">)</span>
+        print<span class="token punctuation">(</span>f<span class="token string">"恭喜您喜提新车牌：{choice}"</span><span class="token punctuation">)</span>
         exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
     else:
         <span class="token keyword">if</span> count <span class="token operator">&lt;</span> 3:
@@ -612,7 +612,7 @@ car_nums <span class="token operator">=</span> <span class="token punctuation">[
 choice2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">while</span> choice2 not <span class="token keyword">in</span> car_nums:                 <span class="token comment" spellcheck="true">#死循环</span>
     choice2 <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"三次选择结束请选择车牌："</span><span class="token punctuation">)</span>.strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>f<span class="token string">"恭喜您喜提新车牌： &amp;#123;choice2&amp;#125;！！！"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>f<span class="token string">"恭喜您喜提新车牌： {choice2}！！！"</span><span class="token punctuation">)</span>
 </code></pre>
 <ul>
 <li>output:</li>
@@ -700,11 +700,11 @@ print<span class="token punctuation">(</span>nam<span class="token punctuation">
 <ul>
 <li><h3 id="字典类型"><a href="#字典类型" class="headerlink" title="字典类型"></a>字典类型</h3></li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">name <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;                              #字典</span>
+<pre class=" language-bash"><code class="language-bash">name <span class="token operator">=</span> <span class="token punctuation">{</span>                              <span class="token comment" spellcheck="true">#字典</span>
     <span class="token string">"osp"</span> <span class="token keyword">:</span> <span class="token punctuation">[</span>22,<span class="token string">'student'</span>,1500<span class="token punctuation">]</span>,
     <span class="token string">"佩奇"</span> <span class="token keyword">:</span> <span class="token punctuation">[</span>14,<span class="token string">"student"</span>,0<span class="token punctuation">]</span>,
     <span class="token string">"umr"</span>  <span class="token keyword">:</span> <span class="token string">"好吃懒做"</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">#取值</span>
 
 print<span class="token punctuation">(</span><span class="token string">'字典  ： '</span>,name<span class="token punctuation">)</span>
@@ -731,18 +731,18 @@ print<span class="token punctuation">(</span><span class="token string">'清空 
 <ul>
 <li>output:</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">字典  ：  <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'osp': [22, 'student', 1500], '佩奇': [14, 'student', 0], 'umr': '好吃懒做'&amp;#125;</span>
+<pre class=" language-bash"><code class="language-bash">字典  ：  <span class="token punctuation">{</span><span class="token string">'osp'</span><span class="token keyword">:</span> <span class="token punctuation">[</span>22, <span class="token string">'student'</span>, 1500<span class="token punctuation">]</span>, <span class="token string">'佩奇'</span><span class="token keyword">:</span> <span class="token punctuation">[</span>14, <span class="token string">'student'</span>, 0<span class="token punctuation">]</span>, <span class="token string">'umr'</span><span class="token keyword">:</span> <span class="token string">'好吃懒做'</span><span class="token punctuation">}</span>
 取值（依据key取出value） ：      好吃懒做
-增加 ：   <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'osp': [22, 'student', 1500], '佩奇': [14, 'student', 0], 'umr': '好吃懒做', 'tsf': '活泼可爱'&amp;#125;</span>
-修改 ：   <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'osp': '帅气动人', '佩奇': '古灵精怪', 'umr': '好吃懒做', 'tsf': '活泼可爱'&amp;#125;</span>
-删除 ：   <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'osp': '帅气动人', 'umr': '好吃懒做'&amp;#125;</span>
-清空 ：   <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+增加 ：   <span class="token punctuation">{</span><span class="token string">'osp'</span><span class="token keyword">:</span> <span class="token punctuation">[</span>22, <span class="token string">'student'</span>, 1500<span class="token punctuation">]</span>, <span class="token string">'佩奇'</span><span class="token keyword">:</span> <span class="token punctuation">[</span>14, <span class="token string">'student'</span>, 0<span class="token punctuation">]</span>, <span class="token string">'umr'</span><span class="token keyword">:</span> <span class="token string">'好吃懒做'</span>, <span class="token string">'tsf'</span><span class="token keyword">:</span> <span class="token string">'活泼可爱'</span><span class="token punctuation">}</span>
+修改 ：   <span class="token punctuation">{</span><span class="token string">'osp'</span><span class="token keyword">:</span> <span class="token string">'帅气动人'</span>, <span class="token string">'佩奇'</span><span class="token keyword">:</span> <span class="token string">'古灵精怪'</span>, <span class="token string">'umr'</span><span class="token keyword">:</span> <span class="token string">'好吃懒做'</span>, <span class="token string">'tsf'</span><span class="token keyword">:</span> <span class="token string">'活泼可爱'</span><span class="token punctuation">}</span>
+删除 ：   <span class="token punctuation">{</span><span class="token string">'osp'</span><span class="token keyword">:</span> <span class="token string">'帅气动人'</span>, <span class="token string">'umr'</span><span class="token keyword">:</span> <span class="token string">'好吃懒做'</span><span class="token punctuation">}</span>
+清空 ：   <span class="token punctuation">{</span><span class="token punctuation">}</span>
 </code></pre>
-<h3 id="字典详细操作"><a href="#字典详细操作" class="headerlink" title="字典详细操作"></a>字典详细操作</h3><pre class=" language-bash"><code class="language-bash">name <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;                              #字典</span>
+<h3 id="字典详细操作"><a href="#字典详细操作" class="headerlink" title="字典详细操作"></a>字典详细操作</h3><pre class=" language-bash"><code class="language-bash">name <span class="token operator">=</span> <span class="token punctuation">{</span>                              <span class="token comment" spellcheck="true">#字典</span>
     <span class="token string">"osp"</span> <span class="token keyword">:</span> <span class="token punctuation">[</span>22,<span class="token string">'student'</span>,1500<span class="token punctuation">]</span>,
     <span class="token string">"佩奇"</span> <span class="token keyword">:</span> <span class="token punctuation">[</span>14,<span class="token string">"student"</span>,0<span class="token punctuation">]</span>,
     <span class="token string">"umr"</span>  <span class="token keyword">:</span> <span class="token string">"好吃懒做"</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 name.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">#列表形式列出key</span>
 print<span class="token punctuation">(</span>name.keys<span class="token punctuation">(</span><span class="token punctuation">))</span>
 
@@ -765,26 +765,26 @@ print<span class="token punctuation">(</span>name.items<span class="token punctu
 <span class="token comment" spellcheck="true"># 佩奇 [14, 'student', 0]</span>
 <span class="token comment" spellcheck="true"># umr 好吃懒做</span>
 
-print<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&amp;#123;'osp': [22, 'student', 1500], '佩奇': [14, 'student', 0], 'umr': '好吃懒做'&amp;#125;</span>
+print<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#{'osp': [22, 'student', 1500], '佩奇': [14, 'student', 0], 'umr': '好吃懒做'}</span>
 len<span class="token punctuation">(</span>name<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#求长度</span>
 print<span class="token punctuation">(</span>len<span class="token punctuation">(</span>name<span class="token punctuation">))</span>  <span class="token comment" spellcheck="true">#3</span>
 <span class="token comment" spellcheck="true">#len 方法是全局的，也可判断列表，字符串的长度 数字不行  解释器自带函数</span>
 len<span class="token punctuation">(</span><span class="token string">"osp"</span><span class="token punctuation">)</span>
 print<span class="token punctuation">(</span>len<span class="token punctuation">(</span><span class="token string">"osp"</span><span class="token punctuation">))</span> <span class="token comment" spellcheck="true">#3</span>
 
-name<span class="token punctuation">[</span><span class="token string">'jack'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'salary': 2000,'age': 21 &amp;#125;  #字典增加 嵌套</span>
+name<span class="token punctuation">[</span><span class="token string">'jack'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'salary'</span><span class="token keyword">:</span> 2000,<span class="token string">'age'</span><span class="token keyword">:</span> 21 <span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">#字典增加 嵌套</span>
 print<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#&amp;#123;'osp': [22, 'student', 1500], '佩奇': [14, 'student', 0], 'umr': '好吃懒做', 'jack': &amp;#123;'salary': 2000, 'age': 21&amp;#125;&amp;#125;</span>
+<span class="token comment" spellcheck="true">#{'osp': [22, 'student', 1500], '佩奇': [14, 'student', 0], 'umr': '好吃懒做', 'jack': {'salary': 2000, 'age': 21}}</span>
 
 <span class="token comment" spellcheck="true">#嵌套字典取值</span>
 print<span class="token punctuation">(</span>name<span class="token punctuation">[</span><span class="token string">'jack'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'salary'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#2000</span>
 </code></pre>
 <h2 id="dict-类型-复制-copy-方法使用注意事项"><a href="#dict-类型-复制-copy-方法使用注意事项" class="headerlink" title="dict 类型 复制.copy()方法使用注意事项"></a>dict 类型 复制.copy()方法使用注意事项</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
-english1 <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+english1 <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token string">"we"</span><span class="token keyword">:</span><span class="token string">"我们"</span>,
     <span class="token string">"world"</span><span class="token keyword">:</span><span class="token string">"世界"</span>,
     <span class="token string">"company"</span><span class="token keyword">:</span> <span class="token string">"公司"</span>,
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 english2 <span class="token operator">=</span> english1
 english3 <span class="token operator">=</span> english1.copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
@@ -809,19 +809,19 @@ print<span class="token punctuation">(</span><span class="token string">"english
 print<span class="token punctuation">(</span><span class="token string">"english3"</span>,english3<span class="token punctuation">)</span>
 </code></pre>
 <p>结果：</p>
-<pre class=" language-bash"><code class="language-bash">english1 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司'&amp;#125;</span>
-english2 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司'&amp;#125;</span>
-english3 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司'&amp;#125;</span>
+<pre class=" language-bash"><code class="language-bash">english1 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span><span class="token punctuation">}</span>
+english2 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span><span class="token punctuation">}</span>
+english3 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span><span class="token punctuation">}</span>
 --------------------------
 change english2
-english1 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司', 'city': '城市'&amp;#125;</span>
-english2 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司', 'city': '城市'&amp;#125;</span>
-english3 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司'&amp;#125;</span>
+english1 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span>, <span class="token string">'city'</span><span class="token keyword">:</span> <span class="token string">'城市'</span><span class="token punctuation">}</span>
+english2 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span>, <span class="token string">'city'</span><span class="token keyword">:</span> <span class="token string">'城市'</span><span class="token punctuation">}</span>
+english3 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span><span class="token punctuation">}</span>
 --------------------------
 change english3
-english1 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司', 'city': '城市'&amp;#125;</span>
-english2 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司', 'city': '城市'&amp;#125;</span>
-english3 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'we': '我们', 'world': '世界', 'company': '公司', 'school': '学校'&amp;#125;</span>
+english1 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span>, <span class="token string">'city'</span><span class="token keyword">:</span> <span class="token string">'城市'</span><span class="token punctuation">}</span>
+english2 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span>, <span class="token string">'city'</span><span class="token keyword">:</span> <span class="token string">'城市'</span><span class="token punctuation">}</span>
+english3 <span class="token punctuation">{</span><span class="token string">'we'</span><span class="token keyword">:</span> <span class="token string">'我们'</span>, <span class="token string">'world'</span><span class="token keyword">:</span> <span class="token string">'世界'</span>, <span class="token string">'company'</span><span class="token keyword">:</span> <span class="token string">'公司'</span>, <span class="token string">'school'</span><span class="token keyword">:</span> <span class="token string">'学校'</span><span class="token punctuation">}</span>
 </code></pre>
 <p>从例子的执行结果可以看出，使用copy方法对获取到的字典做修改，原始的字典不受影响。<br>使用copy方法就像重新写了一个新的字典，只是元素恰巧和原来的字典相同。<br>注意copy进行拷贝是浅拷贝，如果字典的元素值也是字典，那么copy方法只会影响<br>最外层的字典，元素内部还是引用。可以用 <em>深拷贝</em> 解决此类问题。<br>例子：</p>
 <pre class=" language-bash"><code class="language-bash">c<span class="token operator">=</span>copy.copy<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
@@ -956,7 +956,7 @@ umr,123123abab,0
 <p>登录：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#  -*- coding: utf-8  -*-</span>
 <span class="token comment" spellcheck="true"># 1.先做一个字典存用户数据</span>
-accounts <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+accounts <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true"># 2.将文档用户数据写入字典</span>
 f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"account.db"</span>,<span class="token string">"r"</span>,encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
@@ -974,18 +974,18 @@ print<span class="token punctuation">(</span><span class="token string">"-----�
         print<span class="token punctuation">(</span><span class="token string">"用户名不存在，请重新输入。。。"</span><span class="token punctuation">)</span>
         <span class="token keyword">continue</span>
     <span class="token keyword">elif</span>  accounts<span class="token punctuation">[</span>user<span class="token punctuation">]</span><span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"1"</span><span class="token keyword">:</span>
-        print<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;user&amp;#125;此账户已被锁定，请联系管理员。。。"</span><span class="token punctuation">)</span>
+        print<span class="token punctuation">(</span>f<span class="token string">"{user}此账户已被锁定，请联系管理员。。。"</span><span class="token punctuation">)</span>
         <span class="token keyword">continue</span>
     count <span class="token operator">=</span> 0
     <span class="token keyword">while</span> count <span class="token operator">&lt;</span> 3:                      <span class="token comment" spellcheck="true">#控制密码（判断密码正确否，三次锁定）</span>
         password <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入密码："</span><span class="token punctuation">)</span>.strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">if</span> password <span class="token operator">==</span>  accounts<span class="token punctuation">[</span>user<span class="token punctuation">]</span><span class="token punctuation">[</span>1<span class="token punctuation">]</span>:
-            print<span class="token punctuation">(</span>f<span class="token string">"welcome'&amp;#123;user&amp;#125;'...登入成功。。。"</span><span class="token punctuation">)</span>
+            print<span class="token punctuation">(</span>f<span class="token string">"welcome'{user}'...登入成功。。。"</span><span class="token punctuation">)</span>
         else:
             print<span class="token punctuation">(</span><span class="token string">"密码输入错误请重试。。。"</span><span class="token punctuation">)</span>
         count +<span class="token operator">=</span> 1
     <span class="token keyword">if</span> count <span class="token operator">==</span> 3 and password <span class="token operator">!=</span> accounts<span class="token punctuation">[</span>user<span class="token punctuation">]</span><span class="token punctuation">[</span>1<span class="token punctuation">]</span> <span class="token keyword">:</span>   <span class="token comment" spellcheck="true">#小bug，就是输错两次，第三次正确也会锁号</span>
-        print<span class="token punctuation">(</span>f<span class="token string">"输错了&amp;#123;count&amp;#125;次密码，账号&amp;#123;user&amp;#125;已锁定。。。"</span><span class="token punctuation">)</span> #必须补充条件
+        print<span class="token punctuation">(</span>f<span class="token string">"输错了{count}次密码，账号{user}已锁定。。。"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#必须补充条件</span>
         <span class="token comment" spellcheck="true"># 1.先改在内存中dict 账号信息的用户状态</span>
         <span class="token comment" spellcheck="true"># 2.把dict里的数据转成原account.db数据格式，并存回文件</span>
         accounts<span class="token punctuation">[</span>user<span class="token punctuation">]</span><span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"1"</span>
@@ -1001,7 +1001,7 @@ print<span class="token punctuation">(</span><span class="token string">"-----�
 <p>注册：</p>
 <pre class=" language-bash"><code class="language-bash">f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"account.db"</span>, mode<span class="token operator">=</span><span class="token string">"a+"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># a+ 模式光标默认放置在末尾，太艹了，卡了好久</span>
 f.seek<span class="token punctuation">(</span>0<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#将光标移至开头</span>
-accounts <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125; #空字典存数据</span>
+accounts <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#空字典存数据</span>
 <span class="token keyword">for</span> line <span class="token keyword">in</span> f <span class="token keyword">:</span>             <span class="token comment" spellcheck="true">#将数据从文件读到字典（也就是加载到内存）</span>
     line <span class="token operator">=</span> line.strip<span class="token punctuation">(</span><span class="token punctuation">)</span>.split<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span>
     accounts<span class="token punctuation">[</span>line<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> line
@@ -1009,11 +1009,11 @@ accounts <span class="token operator">=</span> <span class="token operator">&amp
 
 print<span class="token punctuation">(</span><span class="token string">"------用户注册------"</span><span class="token punctuation">)</span>
 user <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入用户名："</span><span class="token punctuation">)</span>
-<span class="token keyword">while</span> f<span class="token string">"&amp;#123;user&amp;#125;"</span> <span class="token keyword">in</span> accounts.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>:  #比对用户名是否重复
+<span class="token keyword">while</span> f<span class="token string">"{user}"</span> <span class="token keyword">in</span> accounts.keys<span class="token punctuation">(</span><span class="token punctuation">)</span>:  <span class="token comment" spellcheck="true">#比对用户名是否重复</span>
     print<span class="token punctuation">(</span><span class="token string">"用户名已存在请重试..."</span><span class="token punctuation">)</span>
     user <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入用户名："</span><span class="token punctuation">)</span>
 
-print<span class="token punctuation">(</span>f<span class="token string">"用户名为：&amp;#123;user&amp;#125;"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>f<span class="token string">"用户名为：{user}"</span><span class="token punctuation">)</span>
 password <span class="token operator">=</span> None
 password2 <span class="token operator">=</span> <span class="token string">"None@!<span class="token variable">$@#@</span>$<span class="token variable">$##</span>%$%#"</span>
 <span class="token keyword">while</span> password <span class="token operator">!=</span> password2:            <span class="token comment" spellcheck="true">#二次输入验证</span>
@@ -1025,9 +1025,9 @@ password2 <span class="token operator">=</span> <span class="token string">"None
     <span class="token keyword">if</span> password <span class="token operator">!=</span> password2:
         print<span class="token punctuation">(</span><span class="token string">"两次输入的密码不相同请重试。。。"</span><span class="token punctuation">)</span>
 
-print<span class="token punctuation">(</span>f<span class="token string">"恭喜您注册成功...用户名为：&amp;#123;user&amp;#125;"</span><span class="token punctuation">)</span>
-data_base <span class="token operator">=</span> f<span class="token string">"&amp;#123;user&amp;#125;,&amp;#123;password2&amp;#125;,0"</span>
-f.write<span class="token punctuation">(</span>f<span class="token string">"\n&amp;#123;data_base&amp;#125;"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>f<span class="token string">"恭喜您注册成功...用户名为：{user}"</span><span class="token punctuation">)</span>
+data_base <span class="token operator">=</span> f<span class="token string">"{user},{password2},0"</span>
+f.write<span class="token punctuation">(</span>f<span class="token string">"\n{data_base}"</span><span class="token punctuation">)</span>
 f.close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><pre><code># 列表推导式  格式：[表达式 for 变量 in 旧列表] 或者 [表达式 for 变量 in 旧列表 if 条件]

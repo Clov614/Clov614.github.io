@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -454,14 +454,14 @@ p=p+1（相当于p++）;
 </code></pre>
 <p>表示<code>指针变量p往高地址移动一个数据单元，具体移动多少个字节取决于指针的类型。若p的类型是char *，那么往高地址移动一个数据单元，就是往地址移动1个字节；若p的类型是int *，那么往高地址移动一个数据单元，就是往高地址移动2个字节；以此类推。</code>  </p>
 <h1 id="四、指针与数组"><a href="#四、指针与数组" class="headerlink" title="四、	指针与数组"></a>四、	指针与数组</h1><p><strong>数组的数组名表示数组的首地址，且是一个常量，在程序运行过程当中，其值是不能被改变的。数组元素在内存中是连续分布。</strong>  </p>
-<pre class=" language-C"><code class="language-C">int a[5]=&#123;10,20,30,40,50&#125;;
+<pre class=" language-C"><code class="language-C">int a[5]={10,20,30,40,50};
     int *p;
     int i;
     p=a;
         for(i=0;i<=4;i++)
-    &#123;
+    {
         printf("%d ",*(p++));
-&#125;
+}
 </code></pre>
 <p>输出结果：10 20 30 40 50<br>注意（本部分内容，有同学们自己根据上课的讲解自行补充！）：<br><em>p++等价于</em>(p++):<br>(*p)++:<br>*++p:<br>++*p  </p>
 <h1 id="五、指针与函数"><a href="#五、指针与函数" class="headerlink" title="五、	指针与函数"></a>五、	指针与函数</h1><ul>
@@ -470,51 +470,51 @@ p=p+1（相当于p++）;
 <p>例：调用函数，对主函数中的两个变量的值进行互换操作，对照两种互换函数的区别  </p>
 <pre class=" language-C"><code class="language-C">#include "stdio.h"
 void change1(int x,int y)
-&#123;
+{
     int t;
     t=x;
     x=y;
     y=t;
     return;
-&#125;
+}
 
 void change2(int *x,int *y)
-&#123;
+{
     int t;
     t=*x;
     *x=*y;
     *y=t;
     return;
-&#125;
+}
 
 void main()
-&#123;
+{
     int a=100,b=200;
     change2(&a,&b);
     printf("%d,%d\n",a,b);
-&#125;
+}
 </code></pre>
 <ul>
 <li>2  函数名作为函数参数在函数中进行传递</li>
 </ul>
 <pre class=" language-C"><code class="language-C">#include "stdio.h"
 fun(int *p)
-&#123;	int i;
+{	int i;
     for(i=0;i<=4;i++)
-    &#123;		p[i]=p[i]*10;	&#125;
-&#125;
+    {		p[i]=p[i]*10;	}
+}
 fun2(int p[])
-&#123;	int i;
+{	int i;
     for(i=0;i<=4;i++)
-    &#123;		p[i]=p[i]*10;	&#125;
-&#125;
+    {		p[i]=p[i]*10;	}
+}
 void main()
-&#123;   int a[5]=&#123;10,20,30,40,50&#125;;
+{   int a[5]={10,20,30,40,50};
     int i;
     fun2(a);
     for(i=0;i<=4;i++)
-    &#123;    	printf("%d ",a[i]);    &#125;
-&#125;
+    {    	printf("%d ",a[i]);    }
+}
 </code></pre>
 <ul>
 <li>3 	返回值类型为指针的函数（本部分内容将结合链表内容一起讲解）</li>
@@ -534,8 +534,8 @@ void main()
 #define END  &#125;  //用标识符END代表字符串 &#125;
 </code></pre>
 <p>程序举例：  </p>
-<pre class=" language-C"><code class="language-C">#define BEGIN main()&#123;
-#define END &#125;
+<pre class=" language-C"><code class="language-C">#define BEGIN main(){
+#define END }
 #define GS "%d\n"
 BEGIN
 int a=100;
@@ -554,21 +554,21 @@ END
 #define PI 3.14
 #define S(r) PI*r*r
 void main()
-&#123;
+{
     double area;
     area=S(7);/*在编译之前必须将S(7)替换为3.14*7*7*/
-    printf("%lf\n",area);&#125;
+    printf("%lf\n",area);}
 
     //运行结果: 153.860000  
 </code></pre>
 <pre class=" language-C"><code class="language-C">#include "stdio.h"
 #define S(a) a/a
 void main()
-&#123;
+{
     int i;
     i=S(4+4);/*在编译之前S(4+4)将被替换为：4+4/4+4*/
     printf("%d",i);
-&#125;
+}
     //运行结果: 9
 </code></pre>
 <h2 id="三、文件包含"><a href="#三、文件包含" class="headerlink" title="三、文件包含"></a>三、文件包含</h2><ul>
@@ -581,61 +581,61 @@ void main()
 <li>1  结构体类型的定义<br>格式如下：</li>
 </ul>
 <pre class=" language-C"><code class="language-C">struct  结构体类型名
-&#123;  类型名1   结构体成员名1;
+{  类型名1   结构体成员名1;
    类型名2   结构体成员名2;
 ……
 类型名n    结构体成员名n;
-&#125;;
+};
 </code></pre>
 <p>例如：  </p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用12个字节</span>
+<span class="token punctuation">{</span>   <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用12个字节</span>
     <span class="token keyword">int</span>  age<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用2个字节</span>
     <span class="token keyword">char</span> sex<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//占用1个字节</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*person数据类型定义完成，属于构造数据类型*/</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*person数据类型定义完成，属于构造数据类型*/</span>
 </code></pre>
 <p><code>person数据类型定义完成，属于构造数据类型</code><br>person是结构体类型名，它紧跟在关键字struct之后。通过一对花括号将内部成员(属性)括起，内部成员之间用分号间隔。其中：成员变量name、age、sex的数据类型不同。要注意花括号后的分号不能忽略。  </p>
 <ul>
 <li>2  结构体变量的定义<br>第一种方式：通过已构造好的结构体类型来定义结构体变量，其形式如下：<br><code>struct  结构体类型名  结构体变量名;</code><br>结构体变量名应是一个合法的标识符。利用前一节所定义好的结构体类型person来定义结构体变量：<br> struct  person  p1;<br> 定义p1为person结构体类型的变量，<code>变量p1占用15个字节的内存单元</code>。注意：在这里<strong>struct关键字不能缺省</strong>。<br> 第二种方式：在构造结构体类型的同时定义结构体变量，其形式如下：</li>
 </ul>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  结构体类型名
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 结构体成员列表<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>结构体变量名<span class="token number">1</span><span class="token punctuation">,</span>……<span class="token punctuation">,</span>结构体变量名n<span class="token punctuation">;</span>
+<span class="token punctuation">{</span> 结构体成员列表<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>结构体变量名<span class="token number">1</span><span class="token punctuation">,</span>……<span class="token punctuation">,</span>结构体变量名n<span class="token punctuation">;</span>
 </code></pre>
 <p>结构体变量名在花括号后直接给出，多个变量之间用逗号隔开，最后一个变量名后要用分号结束。例如：  </p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>  <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
    <span class="token keyword">int</span>  age<span class="token punctuation">;</span>
    <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>p2<span class="token punctuation">,</span>p3<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//定义了p2和p3为person结构体类型的变量。</span>
+<span class="token punctuation">}</span>p2<span class="token punctuation">,</span>p3<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//定义了p2和p3为person结构体类型的变量。</span>
 </code></pre>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person  p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person  p1<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"Zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 或：
 <span class="token keyword">struct</span>  person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>  <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>  <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
    <span class="token keyword">int</span>  age<span class="token punctuation">;</span>
    <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lili"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>p2<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"lili"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p><code>注意：初始化时，值的类型要与结构体的成员类型对应一致。</code>  </p>
 <ul>
 <li>3  结构体成员的引用<br>使用结构体成员之前，必须定义结构体变量。通过成员运算符“.”引用结构体成员。引用结构体成员的基本形式为：   <center><font color=red size=4>结构体变量名.结构体成员名</font></center>  
 &#160; 成员运算符“.”在所有运算符中的优先级最高，应将这种引用形式看作一个整体，其性质与其它的普通变量完全相同。比如，用引用结构体变量p1成员age格式为：p1.age，p1.age 应被看一个成整体，p1.age++是对p1.age自增，而不是对age自增，age是整型，所以p1.age在使用中与普通的整型变量使用方法一样。</li>
 </ul>
-<p>&amp;#160; 程序举例：对张三和李四的数据信息进行输出操作。  </p>
+<p>&#160; 程序举例：对张三和李四的数据信息进行输出操作。  </p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> age<span class="token punctuation">;</span>
     <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>p2<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p1<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p1<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p2<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">// 程序运行结果：  </span>
 <span class="token comment" spellcheck="true">// zhangsan,20,m</span>
@@ -645,19 +645,19 @@ void main()
 <li>4  结构体数组的定义<br>定义结构体数组与定义结构体变量相类似，其格式如下：<br>struct  结构体类型名  结构体数组名[长度];<br>结构体数组名应是一个合法的标识符。例如：  <center><font color=black size=5>struct  person  p[10];</font></center>  
 &#160; 表示p为person类型的结构体数组，其有10个数组元素，每个元素都是struct  person类型变量。</li>
 </ul>
-<p>&amp;#160;例如：  </p>
+<p>&#160;例如：  </p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span><span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> age<span class="token punctuation">;</span>
   <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
   <span class="token keyword">char</span> addr<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> person p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"sunlin"</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">"beijing"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-                       <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"xiaohua"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">"shanghai"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"yanglan"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token string">"fujian"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> person p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span>   <span class="token punctuation">{</span><span class="token string">"sunlin"</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">"beijing"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                       <span class="token punctuation">{</span><span class="token string">"xiaohua"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">,</span><span class="token string">"shanghai"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span><span class="token string">"yanglan"</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token string">"fujian"</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <ul>
-<li>5  结构体数组对结构体成员的引用<br>&amp;#160; 对结构体数组的访问和对普通数组的一样，也是用：数组名[下标]来确定结构体数组元素。结构体数组元素即为结构体类型变量，所以引用结构体数组元素的成员时，也要使用成员运算符“.”。其一般格式是：  <center><font color=black size=5> 数组名[下标].成员名</font></center>  
+<li>5  结构体数组对结构体成员的引用<br>&#160; 对结构体数组的访问和对普通数组的一样，也是用：数组名[下标]来确定结构体数组元素。结构体数组元素即为结构体类型变量，所以引用结构体数组元素的成员时，也要使用成员运算符“.”。其一般格式是：  <center><font color=black size=5> 数组名[下标].成员名</font></center>  
 &#160;如在上节例中：p[1].age表示是结构体数组p中的第二个数组元素中的成员age，它的值为20。</li>
 </ul>
 <p>也可以对引用的数据进行修改，比如修改此处的年龄，<strong>可以用p[1].age&#x3D;23，那么此时小华的年龄被更改为23岁</strong>。</p>
@@ -666,10 +666,10 @@ void main()
 例如：</li>
 </ul>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  person  <span class="token operator">*</span>p<span class="token punctuation">;</span>
-<span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>“zhangsan”<span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span>’m’<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token punctuation">{</span>“zhangsan”<span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span>’m’<span class="token punctuation">}</span><span class="token punctuation">;</span>
            p <span class="token operator">=</span> <span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
 </code></pre>
-<p>&amp;#160; 通过结构体类型struct  person 定义一个指针变量p，并把结构体变量p1的首地址赋值给p,此时，指针变量p也就指向了结构体变量p1的首地址。以后便可以通过指针变量p引用结构体变量p1的成员了。一个指针变量引用结构体变量的成员格式有以下两种：  </p>
+<p>&#160; 通过结构体类型struct  person 定义一个指针变量p，并把结构体变量p1的首地址赋值给p,此时，指针变量p也就指向了结构体变量p1的首地址。以后便可以通过指针变量p引用结构体变量p1的成员了。一个指针变量引用结构体变量的成员格式有以下两种：  </p>
 <center><font color=black size=4>格式一：（*指针变量名）.结构体成员名</font></center>  
 <center><font color=red size=4>格式二： 指针变量名->结构体成员名</font></center>   
 &#160; 注意：格式一的圆括号不能省略，因为成员运算符“.”的优先级别比指针运算符“*”高。（*指针变量名）表示该指针变量所指向的结构体变量。   
@@ -678,18 +678,18 @@ void main()
 <pre><code>(*p).age 
 或者：p-&gt;age
 </code></pre>
-<p>&amp;#160; 以上两种形式都是利用指针变量p引用结构体中的成员age，结果都等价于p1.age。  </p>
+<p>&#160; 以上两种形式都是利用指针变量p引用结构体中的成员age，结果都等价于p1.age。  </p>
 <pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
 <span class="token keyword">struct</span> person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> age<span class="token punctuation">;</span>
     <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> person p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> person p1<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> person p2<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token keyword">struct</span> person <span class="token operator">*</span>q<span class="token punctuation">;</span>
     q<span class="token operator">=</span><span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -697,51 +697,51 @@ void main()
     q<span class="token operator">=</span><span class="token operator">&amp;</span>p2<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>p2<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>age<span class="token punctuation">,</span>p2<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="六、typedef定义类型别名"><a href="#六、typedef定义类型别名" class="headerlink" title="六、typedef定义类型别名"></a>六、typedef定义类型别名</h2><p>C语言中，用关键字typedef定义类型的别名。用户运用typedef便可以将之前的类型名用一个新的名称来代替，其作用在<strong>简化程序的同时也增强了程序的可读性</strong>。  </p>
 <ul>
 <li>1  用typedef定义类型别名的格式：<br><font color=red>typedef  原类型名   新类型名;</font><br>typedef  int  INTEGER; &#x2F;<em>定义INTEGER为int的类型别名</em>&#x2F;<br>INTEGER  i;  等价于：  int  i;</li>
 </ul>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> person
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> age<span class="token punctuation">;</span>
     <span class="token keyword">char</span> sex<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>Person<span class="token punctuation">,</span><span class="token operator">*</span>PERSON<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Person<span class="token punctuation">,</span><span class="token operator">*</span>PERSON<span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    Person p1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*等价于 strcut person p1*/</span>
-    Person p2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+    Person p1<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">'m'</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*等价于 strcut person p1*/</span>
+    Person p2<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     PERSON q<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/* 等价于Person *q */</span>
     q<span class="token operator">=</span><span class="token operator">&amp;</span>p1<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
     q<span class="token operator">=</span><span class="token operator">&amp;</span>p2<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s,%d,%c\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>name<span class="token punctuation">,</span>q<span class="token operator">-></span>age<span class="token punctuation">,</span>q<span class="token operator">-></span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="七、链表的定义"><a href="#七、链表的定义" class="headerlink" title="七、链表的定义"></a>七、链表的定义</h2><p>链表是程序设计中经常使用到的一种重要的数据结构。链表由若干个被称为结点（如下图表示一个结点）的元素组成。每个结点包含两部分信息：一是数据部分（域），存放任何类型的需要处理的数据，二是指针部分（域），存放指向下一个结点的地址。在C语言中“结点”通常用结构体来表示。<br><img src="https://iaimi.info/images/2022/04/05/Node01.png"><br>运用结构体可方便的定义结点，具体定义格式如下：  </p>
 <pre class=" language-c"><code class="language-c"> <span class="token keyword">struct</span>  结构体类型名
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 数据成员类表
+        <span class="token punctuation">{</span> 数据成员类表
 　　　　　<span class="token keyword">struct</span> 结构体类型名 <span class="token operator">*</span>  指针变量名 <span class="token punctuation">;</span>
-　　　　<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+　　　　<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>其中两个结构体类型名相同，指针变量名用“struct &lt;结构体类型名&gt; *”定义，表示该指针变量指向同一种结构体类型的数据。依据该格式来创建一个结点如下：  </p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span>  node
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+<span class="token punctuation">{</span> <span class="token keyword">int</span> data<span class="token punctuation">;</span>
   <span class="token keyword">struct</span> node  <span class="token operator">*</span> next<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>其中：结构体类型struct node为所定义的结点类型，data表示该结点中存储的数据，为整型； next被定义成struct node类型的指针变量，它指向类型为struct node结构体的结点。<br>例：创建一张如下图的简单链表，并依次输出结点的数据。<br><img src="https://iaimi.info/images/2022/04/05/Node02.png"><br>程序代码：  </p>
 <pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span> node
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     <span class="token keyword">int</span> num<span class="token punctuation">;</span>
     <span class="token keyword">double</span> score<span class="token punctuation">;</span>
     <span class="token keyword">struct</span> node <span class="token operator">*</span> next<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>Node<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node p1<span class="token punctuation">,</span>p2<span class="token punctuation">,</span>p3<span class="token punctuation">;</span>
     Node <span class="token operator">*</span>q<span class="token punctuation">;</span>
     p1<span class="token punctuation">.</span>num<span class="token operator">=</span><span class="token number">10121</span><span class="token punctuation">;</span>
@@ -757,11 +757,11 @@ void main()
     p3<span class="token punctuation">.</span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
     
     <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d,%.2lf\n"</span><span class="token punctuation">,</span>q<span class="token operator">-></span>num<span class="token punctuation">,</span>q<span class="token operator">-></span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
         q<span class="token operator">=</span>q<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 程序运行结果：  </span>
 <span class="token comment" spellcheck="true">/*10121,85.00
 10133,87.50
@@ -804,73 +804,73 @@ void main()
 <span class="token keyword">typedef</span> <span class="token keyword">int</span> Status<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span> node
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     ElemType data<span class="token punctuation">;</span>
     <span class="token keyword">struct</span> node <span class="token operator">*</span>next<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>Node<span class="token punctuation">,</span><span class="token operator">*</span>LinkList<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Node<span class="token punctuation">,</span><span class="token operator">*</span>LinkList<span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">/*InitList初始化链表的操作，初始化成功须返回头结点的地址*/</span>
 LinkList <span class="token function">InitList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node <span class="token operator">*</span>head<span class="token punctuation">;</span>
     head<span class="token operator">=</span><span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     head<span class="token operator">-></span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> head<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/*创建具有n个结点的单链表*/</span>
 <span class="token keyword">void</span> <span class="token function">CreateList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node <span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
     <span class="token keyword">int</span> i<span class="token punctuation">;</span>
     r<span class="token operator">=</span>L<span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         s<span class="token operator">=</span><span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
         s<span class="token operator">-></span>next<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
         
         r<span class="token operator">-></span>next<span class="token operator">=</span>s<span class="token punctuation">;</span>
         r<span class="token operator">=</span>s<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/*单链表数据的输出操作*/</span>
 <span class="token keyword">void</span> <span class="token function">PrintList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node <span class="token operator">*</span>r<span class="token operator">=</span>L<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"链表中的数据:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">-></span>next<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>r<span class="token operator">-></span>next<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
         r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/*求单链表的长度*/</span>
 <span class="token keyword">int</span> <span class="token function">LengthList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node <span class="token operator">*</span>r<span class="token operator">=</span>L<span class="token punctuation">;</span>
     <span class="token keyword">int</span> counter<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">-></span>next<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         counter<span class="token operator">++</span><span class="token punctuation">;</span>
         r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
     <span class="token keyword">return</span> counter<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/*单链表的插入操作*/</span>
 Status <span class="token function">InsertList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span>ElemType e<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node <span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
     <span class="token keyword">int</span> j<span class="token punctuation">;</span>
     r<span class="token operator">=</span>L<span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">1</span><span class="token operator">||</span>i<span class="token operator">></span><span class="token function">LengthList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token number">-1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
     s<span class="token operator">=</span><span class="token punctuation">(</span>Node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     s<span class="token operator">-></span>data<span class="token operator">=</span>e<span class="token punctuation">;</span>
@@ -879,11 +879,11 @@ Status <span class="token function">InsertList</span><span class="token punctuat
     r<span class="token operator">-></span>next<span class="token operator">=</span>s<span class="token punctuation">;</span>
     
     <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/*单链表的删除操作*/</span>
 Status <span class="token function">DeleteList</span><span class="token punctuation">(</span>LinkList L<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
     Node <span class="token operator">*</span>r<span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
     <span class="token keyword">int</span> j<span class="token punctuation">;</span>
     r<span class="token operator">=</span>L<span class="token punctuation">;</span>
@@ -891,9 +891,9 @@ Status <span class="token function">DeleteList</span><span class="token punctuat
     <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">/*让r指向链表中的第i-1个位置*/</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token number">-1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         r<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
     <span class="token comment" spellcheck="true">/*删除第i个位置的结点*/</span>
     s<span class="token operator">=</span>r<span class="token operator">-></span>next<span class="token punctuation">;</span>
@@ -902,10 +902,10 @@ Status <span class="token function">DeleteList</span><span class="token punctuat
     <span class="token function">free</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*释放所删除的结点*/</span>
     
     <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
        LinkList L<span class="token punctuation">;</span>
        L<span class="token operator">=</span><span class="token function">InitList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token function">CreateList</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -919,7 +919,7 @@ Status <span class="token function">DeleteList</span><span class="token punctuat
        <span class="token function">DeleteList</span><span class="token punctuation">(</span>L<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token function">PrintList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"当前链表的长度是:%d\n"</span><span class="token punctuation">,</span><span class="token function">LengthList</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>输出结果：<br><img src="https://iaimi.info/images/2022/04/05/2022-04-05-171938.png">  </p>
 

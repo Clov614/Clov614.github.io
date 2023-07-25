@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -420,7 +420,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="基于ffmpeg集成的转码工具"><a href="#基于ffmpeg集成的转码工具" class="headerlink" title="基于ffmpeg集成的转码工具"></a>基于ffmpeg集成的转码工具</h1><h3 id="有兴趣可以翻阅-ffmpeg官网"><a href="#有兴趣可以翻阅-ffmpeg官网" class="headerlink" title="有兴趣可以翻阅 (ffmpeg官网)"></a>有兴趣可以翻阅 <a target="_blank" rel="noopener" href="http://ffmpeg.org/">(ffmpeg官网)</a></h3><ul>
-<li><h3 id="2020-x2F-1213-更新：download"><a href="#2020-x2F-1213-更新：download" class="headerlink" title="2020&#x2F;1213 更新：download"></a>2020&#x2F;1213 更新：<a target="_blank" rel="noopener" href="https://wwa.lanzous.com/iGjtajaqjod">download</a></h3></li>
+<li><h3 id="2020-1213-更新：download"><a href="#2020-1213-更新：download" class="headerlink" title="2020&#x2F;1213 更新：download"></a>2020&#x2F;1213 更新：<a target="_blank" rel="noopener" href="https://wwa.lanzous.com/iGjtajaqjod">download</a></h3></li>
 </ul>
 <p><img src="http://fp1.fghrsh.net/2020/12/14/ed729b48e9b3d05bbf0b8f4f57bbbcfd.md.png">  </p>
 <p>1.将程序封装成安装程序，自动将ffmpeg环境配置好  </p>
@@ -481,11 +481,11 @@ def f_inspect<span class="token punctuation">(</span>e1_get,fps_get,image_name_g
         count -<span class="token operator">=</span> 5
     <span class="token keyword">if</span> not fps_get.isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span> or e1_get <span class="token operator">==</span> <span class="token string">""</span> or image_name_get <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+e1_get+<span class="token string">" -r "</span>+fps_get+<span class="token string">" -f image2 "</span>+f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output\\\\"</span>+image_name_get<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#print("ffmpeg -i "+e1_get+" -r "+fps_get+" -f image2 "+f"&amp;#123;path&amp;#125;"+"\\\\output\\\\"+image_name_get)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+e1_get+<span class="token string">" -r "</span>+fps_get+<span class="token string">" -f image2 "</span>+f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output\\\\"</span>+image_name_get<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#print("ffmpeg -i "+e1_get+" -r "+fps_get+" -f image2 "+f"{path}"+"\\\\output\\\\"+image_name_get)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def f_inspect2<span class="token punctuation">(</span>e2,fps2,image_name2<span class="token punctuation">)</span>:
@@ -502,11 +502,11 @@ def f_inspect2<span class="token punctuation">(</span>e2,fps2,image_name2<span c
         count -<span class="token operator">=</span> 5
     <span class="token keyword">if</span> not fps2.isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span> or e2 <span class="token operator">==</span> <span class="token string">""</span> or image_name2 <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -f image2 -i "</span> + image_name2 + <span class="token string">" -vcodec libx264"</span> + <span class="token string">" -r "</span> + fps2 + f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span> + e2<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#print("ffmpeg -f image2 -i " + image_name2 + " -vcodec libx264" + " -r " + fps2 + f" &amp;#123;path&amp;#125;" + "\\\\output\\\\" + e2)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -f image2 -i "</span> + image_name2 + <span class="token string">" -vcodec libx264"</span> + <span class="token string">" -r "</span> + fps2 + f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span> + e2<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#print("ffmpeg -f image2 -i " + image_name2 + " -vcodec libx264" + " -r " + fps2 + f" {path}" + "\\\\output\\\\" + e2)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def f_inspect3<span class="token punctuation">(</span>old_e,new_e<span class="token punctuation">)</span>:
@@ -524,11 +524,11 @@ def f_inspect3<span class="token punctuation">(</span>old_e,new_e<span class="to
 
     <span class="token keyword">if</span>  old_e <span class="token operator">==</span> <span class="token string">''</span> or new_e <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span> + old_e + f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span> + new_e<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># print("ffmpeg -i " + old_e + f" &amp;#123;path&amp;#125;" + "\\\\output\\\\" + new_e)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span> + old_e + f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span> + new_e<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print("ffmpeg -i " + old_e + f" {path}" + "\\\\output\\\\" + new_e)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def f_inspect4<span class="token punctuation">(</span>now_file_e<span class="token punctuation">)</span>:
@@ -548,18 +548,18 @@ def f_inspect4<span class="token punctuation">(</span>now_file_e<span class="tok
     count +<span class="token operator">=</span> 1
     <span class="token keyword">if</span> now_file_e <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:   <span class="token comment" spellcheck="true">#执行</span>
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+now_file_e+<span class="token string">" -c:v libx264 -qp 40"</span>+f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span><span class="token punctuation">)</span>
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i"</span>+f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span>+<span class="token string">" -r 1 -f image2 "</span>+f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span>+out_e1+<span class="token string">"_output"</span>+out_e<span class="token punctuation">)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+now_file_e+<span class="token string">" -c:v libx264 -qp 40"</span>+f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span><span class="token punctuation">)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i"</span>+f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span>+<span class="token string">" -r 1 -f image2 "</span>+f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span>+out_e1+<span class="token string">"_output"</span>+out_e<span class="token punctuation">)</span>
         time.sleep<span class="token punctuation">(</span>1<span class="token punctuation">)</span>
         try:
             os.remove<span class="token punctuation">(</span>path + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span><span class="token punctuation">)</span>
         except FileNotFoundError:
             print<span class="token punctuation">(</span><span class="token string">'FileNotFoundError'</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># print("ffmpeg -i "+now_file_e+" -c:v libx264 -qp 40"+f" &amp;#123;path&amp;#125;" + "\\\\output\\\\"+"output.mkv")</span>
-        <span class="token comment" spellcheck="true"># print("ffmpeg -i"+f" &amp;#123;path&amp;#125;" + "\\\\output\\\\"+"output.mkv"+" -r 1 -f image2 "+f" &amp;#123;path&amp;#125;" + "\\\\output\\\\"+out_e1+"_output"+out_e)</span>
+        <span class="token comment" spellcheck="true"># print("ffmpeg -i "+now_file_e+" -c:v libx264 -qp 40"+f" {path}" + "\\\\output\\\\"+"output.mkv")</span>
+        <span class="token comment" spellcheck="true"># print("ffmpeg -i"+f" {path}" + "\\\\output\\\\"+"output.mkv"+" -r 1 -f image2 "+f" {path}" + "\\\\output\\\\"+out_e1+"_output"+out_e)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
@@ -847,11 +847,11 @@ def f_inspect<span class="token punctuation">(</span>e1_get,fps_get,image_name_g
         count -<span class="token operator">=</span> 5
     <span class="token keyword">if</span> not fps_get.isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span> or e1_get <span class="token operator">==</span> <span class="token string">""</span> or image_name_get <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+e1_get+<span class="token string">" -r "</span>+fps_get+<span class="token string">" -f image2 "</span>+f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output\\\\"</span>+image_name_get<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#print("ffmpeg -i "+e1_get+" -r "+fps_get+" -f image2 "+f"&amp;#123;path&amp;#125;"+"\\\\output\\\\"+image_name_get)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+e1_get+<span class="token string">" -r "</span>+fps_get+<span class="token string">" -f image2 "</span>+f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output\\\\"</span>+image_name_get<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#print("ffmpeg -i "+e1_get+" -r "+fps_get+" -f image2 "+f"{path}"+"\\\\output\\\\"+image_name_get)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def f_inspect2<span class="token punctuation">(</span>e2,fps2,image_name2<span class="token punctuation">)</span>:
@@ -868,11 +868,11 @@ def f_inspect2<span class="token punctuation">(</span>e2,fps2,image_name2<span c
         count -<span class="token operator">=</span> 5
     <span class="token keyword">if</span> not fps2.isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span> or e2 <span class="token operator">==</span> <span class="token string">""</span> or image_name2 <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -f image2 -i "</span> + image_name2 + <span class="token string">" -vcodec libx264"</span> + <span class="token string">" -r "</span> + fps2 + f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span> + e2<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#print("ffmpeg -f image2 -i " + image_name2 + " -vcodec libx264" + " -r " + fps2 + f" &amp;#123;path&amp;#125;" + "\\\\output\\\\" + e2)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -f image2 -i "</span> + image_name2 + <span class="token string">" -vcodec libx264"</span> + <span class="token string">" -r "</span> + fps2 + f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span> + e2<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#print("ffmpeg -f image2 -i " + image_name2 + " -vcodec libx264" + " -r " + fps2 + f" {path}" + "\\\\output\\\\" + e2)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def f_inspect3<span class="token punctuation">(</span>old_e,new_e<span class="token punctuation">)</span>:
@@ -890,11 +890,11 @@ def f_inspect3<span class="token punctuation">(</span>old_e,new_e<span class="to
 
     <span class="token keyword">if</span>  old_e <span class="token operator">==</span> <span class="token string">''</span> or new_e <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span> + old_e + f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span> + new_e<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># print("ffmpeg -i " + old_e + f" &amp;#123;path&amp;#125;" + "\\\\output\\\\" + new_e)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span> + old_e + f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span> + new_e<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print("ffmpeg -i " + old_e + f" {path}" + "\\\\output\\\\" + new_e)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def f_inspect4<span class="token punctuation">(</span>now_file_e<span class="token punctuation">)</span>:
@@ -914,13 +914,13 @@ def f_inspect4<span class="token punctuation">(</span>now_file_e<span class="tok
     count +<span class="token operator">=</span> 1
     <span class="token keyword">if</span> now_file_e <span class="token operator">==</span> <span class="token string">""</span><span class="token keyword">:</span>
         count -<span class="token operator">=</span> 5
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> count <span class="token operator">==</span> 1:   <span class="token comment" spellcheck="true">#执行</span>
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+now_file_e+<span class="token string">" -c:v libx264 -qp 40"</span>+f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span><span class="token punctuation">)</span>
-        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i"</span>+f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span>+<span class="token string">" -r 1 -f image2 "</span>+f<span class="token string">" &amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\output\\\\"</span>+out_e1+<span class="token string">"_output"</span>+out_e<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># print("ffmpeg -i "+now_file_e+" -c:v libx264 -qp 40"+f" &amp;#123;path&amp;#125;" + "\\\\output\\\\"+"output.mkv")</span>
-        <span class="token comment" spellcheck="true"># print("ffmpeg -i"+f" &amp;#123;path&amp;#125;" + "\\\\output\\\\"+"output.mkv"+" -r 1 -f image2 "+f" &amp;#123;path&amp;#125;" + "\\\\output\\\\"+out_e1+"_output"+out_e)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+now_file_e+<span class="token string">" -c:v libx264 -qp 40"</span>+f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span><span class="token punctuation">)</span>
+        os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i"</span>+f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span>+<span class="token string">"output.mkv"</span>+<span class="token string">" -r 1 -f image2 "</span>+f<span class="token string">" {path}"</span> + <span class="token string">"\\\\output\\\\"</span>+out_e1+<span class="token string">"_output"</span>+out_e<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print("ffmpeg -i "+now_file_e+" -c:v libx264 -qp 40"+f" {path}" + "\\\\output\\\\"+"output.mkv")</span>
+        <span class="token comment" spellcheck="true"># print("ffmpeg -i"+f" {path}" + "\\\\output\\\\"+"output.mkv"+" -r 1 -f image2 "+f" {path}" + "\\\\output\\\\"+out_e1+"_output"+out_e)</span>
     time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 def time_c<span class="token punctuation">(</span><span class="token punctuation">)</span>:  <span class="token comment" spellcheck="true">#计数器</span>
@@ -1164,10 +1164,10 @@ def en_cod<span class="token punctuation">(</span><span class="token punctuation
     os.system<span class="token punctuation">(</span>path<span class="token punctuation">[</span>0<span class="token punctuation">]</span>+path<span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token comment" spellcheck="true"># print("cd "+path)</span>
     os.system<span class="token punctuation">(</span><span class="token string">"cd "</span>+path<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
-    os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+file+<span class="token string">" -r "</span>+fps+<span class="token string">" -f image2 "</span>+f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output\\\\"</span>+image_name<span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># print("ffmpeg -i "+f"&amp;#123;path&amp;#125;\\\\"+file+" -r "+fps+" -f image2 "+f"&amp;#123;path&amp;#125;"+"\\\\output\\\\"+image_name)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -i "</span>+file+<span class="token string">" -r "</span>+fps+<span class="token string">" -f image2 "</span>+f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output\\\\"</span>+image_name<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print("ffmpeg -i "+f"{path}\\\\"+file+" -r "+fps+" -f image2 "+f"{path}"+"\\\\output\\\\"+image_name)</span>
 
 
 def de_cod<span class="token punctuation">(</span><span class="token punctuation">)</span>:
@@ -1188,10 +1188,10 @@ def de_cod<span class="token punctuation">(</span><span class="token punctuation
     new_name <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入输出视频名：（例：out.mp4）"</span><span class="token punctuation">)</span>
     os.system<span class="token punctuation">(</span>path<span class="token punctuation">[</span>0<span class="token punctuation">]</span> + path<span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token punctuation">)</span>
     os.system<span class="token punctuation">(</span><span class="token string">"cd "</span> + path<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
-        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
-    os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -f image2 -i "</span>+image_name+<span class="token string">" -vcodec libx264"</span>+<span class="token string">" -r "</span>+fps+f<span class="token string">" &amp;#123;path&amp;#125;"</span>+<span class="token string">"\\\\output\\\\"</span>+new_name<span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># print("ffmpeg -f image2 -i "+image_name+" -vcodec libx264"+" -r "+fps+f" &amp;#123;path&amp;#125;"+"\\\\output\\\\"+new_name)</span>
+    <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>:
+        os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span>+<span class="token string">"\\\\output"</span><span class="token punctuation">)</span>
+    os.system<span class="token punctuation">(</span><span class="token string">"ffmpeg -f image2 -i "</span>+image_name+<span class="token string">" -vcodec libx264"</span>+<span class="token string">" -r "</span>+fps+f<span class="token string">" {path}"</span>+<span class="token string">"\\\\output\\\\"</span>+new_name<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print("ffmpeg -f image2 -i "+image_name+" -vcodec libx264"+" -r "+fps+f" {path}"+"\\\\output\\\\"+new_name)</span>
 
 
 def change_format<span class="token punctuation">(</span><span class="token punctuation">)</span>:

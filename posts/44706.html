@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -426,7 +426,7 @@ from fake_useragent <span class="token function">import</span> UserAgent
 <span class="token function">import</span> <span class="token function">time</span>
 from itertools <span class="token function">import</span> product
 
-headers <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
             <span class="token string">'authority'</span><span class="token keyword">:</span> <span class="token string">'www.pixiv.net'</span>,
             <span class="token string">'sec-ch-ua'</span><span class="token keyword">:</span> <span class="token string">'"Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"'</span>,
             <span class="token string">'accept'</span><span class="token keyword">:</span> <span class="token string">'application/json, text/javascript, */*; q=0.01'</span>,
@@ -441,7 +441,7 @@ headers <span class="token operator">=</span> <span class="token operator">&amp;
             <span class="token comment" spellcheck="true"># 'referer':'https://www.pixiv.net/artworks/87255676',  # 防盗链</span>
             <span class="token string">'cookie'</span><span class="token keyword">:</span> <span class="token string">'first_visit_datetime_pc=2021-01-25+17%3A52%3A04; p_ab_id=2; p_ab_id_2=7; p_ab_d_id=1222487481; yuid_b=GCWEdSA; __cfduid=d4e70456039de82435bf2d68ec263371a1611638726; __utmz=235335808.1611638731.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _ga=GA1.2.592285702.1611638731; _gid=GA1.2.1754984064.1611638789; device_token=073c94a0dec1fe7a566be55ad2ff83ab; c_type=19; a_type=0; b_type=1; ki_r=; login_ever=yes; __utmc=235335808; ki_s=; __utma=235335808.592285702.1611638731.1611657616.1611664200.4; PHPSESSID=49568357_wQL7nOLgxtsC5sKbz0oVTLarRNmNLqIN; privacy_policy_agreement=2; __utmv=235335808.|2=login%20ever=yes=1^3=plan=normal=1^5=gender=male=1^6=user_id=49568357=1^9=p_ab_id=2=1^10=p_ab_id_2=7=1^11=lang=zh=1; tag_view_ranking=OT4SuGenFI~kP7msdIeEU~18NCcMsHl5~jaqkarpwly~bXMh6mBhl8~n87ZpuRDS3~HY55MqmzzQ~lH5YZxnbfC~reR7DUAWuG~kGYw4gQ11Z~gpglyfLkWs~HLWLeyYOUF~azESOjmQSV~RTJMXD26Ak~Lt-oEicbBr~oYAm9klH0r~PTyxATIsK0~tK1rVKwWT5~y489EcSQ8H~fq5m22wNFl~jH0uD88V6F~2bq8SNVWly~j7DYHEocqe~SY1hWzTBSP~SVRsxOS1dp~tO5Om4-52p~rsKgvIMw_U~JdNgKFcAjN~eErTeDrRV4~Js5EBY4gOW~PRLZzOBnry~tr4jG_N1yz~gUIg7nrQgl~RcahSSzeRf~sFPxX8lk4q~aKhT3n4RHZ~D0nMcn6oGk~-StjcwdYwv~jk9IzfjZ6n~92z8RZmGQ6; ki_t=1611638990330%3B1611638990330%3B1611670576819%3B1%3B19; tags_sended=1; categorized_tags=CADCYLsad0~IVwLyT8B6k~RcahSSzeRf~RsIQe1tAR0~bXMh6mBhl8~kP7msdIeEU~mt-cXqHhAM; __utmt=1; __cf_bm=be3692187df7cf718e1bfbf11a7d31dc0bf00119-1611678056-1800-AZLiFR3QWIpm9kfIjrOFBX3QG0ssT9659X5pB2xMSU4rl9EHln8qreQAsZ2AP3dRcGQxXsk/iMiOsWhUo4icbqymA3a+doquASmZ15aASNA4bQjiOg5Yqwsl609jbxlT9Y8DBPKulySuu9qjIGlTP6ciriwisEducqbMO9OPFeDC; __utmb=235335808.77.9.1611678055106'</span>,
             <span class="token comment" spellcheck="true"># 此处需替换成真实的，换成你自己的cookie</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        <span class="token punctuation">}</span>
 
 class Pixiv_DownLoad<span class="token punctuation">(</span><span class="token punctuation">)</span>:
 
@@ -452,18 +452,18 @@ class Pixiv_DownLoad<span class="token punctuation">(</span><span class="token p
             <span class="token keyword">for</span> line <span class="token keyword">in</span> f:
                 result.append<span class="token punctuation">(</span>line.strip<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">))</span>
         ips <span class="token operator">=</span> list<span class="token punctuation">(</span>filter<span class="token punctuation">(</span>None, result<span class="token punctuation">))</span>
-        proxies <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'http': random.choice(ips)&amp;#125;</span>
+        proxies <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'http'</span><span class="token keyword">:</span> random.choice<span class="token punctuation">(</span>ips<span class="token punctuation">)</span><span class="token punctuation">}</span>
         <span class="token keyword">return</span> proxies
 
     def illust_id<span class="token punctuation">(</span>self,p<span class="token punctuation">)</span>:
         global headers
 
-        params <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        params <span class="token operator">=</span> <span class="token punctuation">{</span>
             <span class="token string">'mode'</span><span class="token keyword">:</span> <span class="token string">'daily'</span>,
             <span class="token string">'content'</span><span class="token keyword">:</span> <span class="token string">'illust'</span>,
             <span class="token string">'p'</span><span class="token keyword">:</span> p,
             <span class="token string">'format'</span><span class="token keyword">:</span> <span class="token string">'json'</span>,
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        <span class="token punctuation">}</span>
 
         url <span class="token operator">=</span> <span class="token string">'https://www.pixiv.net/ranking.php'</span>  <span class="token comment" spellcheck="true"># pixiv插画排行榜url</span>
         totals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -480,7 +480,7 @@ class Pixiv_DownLoad<span class="token punctuation">(</span><span class="token p
                     ex2 <span class="token operator">=</span> <span class="token string">'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'</span>
                     name <span class="token operator">=</span> re.search<span class="token punctuation">(</span>ex2, middle<span class="token punctuation">)</span>.group<span class="token punctuation">(</span>0<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 用正则提取出pixivID</span>
 
-                    final_url <span class="token operator">=</span> f<span class="token string">"https://i.pximg.net/img-master/img&amp;#123;final[0]&amp;#125;_p0_master1200.jpg"</span> # 拼接url
+                    final_url <span class="token operator">=</span> f<span class="token string">"https://i.pximg.net/img-master/img{final[0]}_p0_master1200.jpg"</span> <span class="token comment" spellcheck="true"># 拼接url</span>
                     m <span class="token operator">=</span> <span class="token punctuation">(</span>final_url,name<span class="token punctuation">)</span>
                     totals.append<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 
@@ -498,7 +498,7 @@ class Pixiv_DownLoad<span class="token punctuation">(</span><span class="token p
                     ex2 <span class="token operator">=</span> <span class="token string">'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'</span>
                     name <span class="token operator">=</span> re.search<span class="token punctuation">(</span>ex2, middle<span class="token punctuation">)</span>.group<span class="token punctuation">(</span>0<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 用正则提取出pixivID</span>
 
-                    final_url <span class="token operator">=</span> f<span class="token string">"https://i.pximg.net/img-master/img&amp;#123;final[0]&amp;#125;_p0_master1200.jpg"</span>  # 拼接url
+                    final_url <span class="token operator">=</span> f<span class="token string">"https://i.pximg.net/img-master/img{final[0]}_p0_master1200.jpg"</span>  <span class="token comment" spellcheck="true"># 拼接url</span>
                     m <span class="token operator">=</span> <span class="token punctuation">(</span>final_url, name<span class="token punctuation">)</span>
                     totals.append<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
 
@@ -510,18 +510,18 @@ class Pixiv_DownLoad<span class="token punctuation">(</span><span class="token p
     def img_download<span class="token punctuation">(</span>self,target_url,name<span class="token punctuation">)</span>:
         global headers
         path <span class="token operator">=</span> os.getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\pic_downloaded"</span><span class="token punctuation">)</span>:
-            os.mkdir<span class="token punctuation">(</span>f<span class="token string">"&amp;#123;path&amp;#125;"</span> + <span class="token string">"\\\\pic_downloaded"</span><span class="token punctuation">)</span>
-        file_path <span class="token operator">=</span> f<span class="token string">"&amp;#123;path&amp;#125;"</span> + f<span class="token string">"\\pic_downloaded\\&amp;#123;name&amp;#125;.jpg"</span>
+        <span class="token keyword">if</span> not os.path.exists<span class="token punctuation">(</span>f<span class="token string">"{path}"</span> + <span class="token string">"\\\\pic_downloaded"</span><span class="token punctuation">)</span>:
+            os.mkdir<span class="token punctuation">(</span>f<span class="token string">"{path}"</span> + <span class="token string">"\\\\pic_downloaded"</span><span class="token punctuation">)</span>
+        file_path <span class="token operator">=</span> f<span class="token string">"{path}"</span> + f<span class="token string">"\\pic_downloaded\\{name}.jpg"</span>
         with open<span class="token punctuation">(</span>file_path, <span class="token string">'wb+'</span><span class="token punctuation">)</span> as f:
             try:
                 proxies <span class="token operator">=</span> self.get_proxy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                headers<span class="token punctuation">[</span><span class="token string">'referer'</span><span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">'https://www.pixiv.net/artworks/&amp;#123;name&amp;#125;'</span>
+                headers<span class="token punctuation">[</span><span class="token string">'referer'</span><span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">'https://www.pixiv.net/artworks/{name}'</span>
                 f.write<span class="token punctuation">(</span>requests.get<span class="token punctuation">(</span>url<span class="token operator">=</span>target_url,headers<span class="token operator">=</span>headers,proxies<span class="token operator">=</span>proxies<span class="token punctuation">)</span>.content<span class="token punctuation">)</span>
                 <span class="token comment" spellcheck="true"># time.sleep(random.randint(2,5))</span>
-                print<span class="token punctuation">(</span><span class="token string">'成功下载图片：&amp;#123;&amp;#125;.jpg'</span>.format<span class="token punctuation">(</span>name<span class="token punctuation">))</span>
+                print<span class="token punctuation">(</span><span class="token string">'成功下载图片：{}.jpg'</span>.format<span class="token punctuation">(</span>name<span class="token punctuation">))</span>
             except Exception:
-                print<span class="token punctuation">(</span><span class="token string">'成功下载图片：&amp;#123;&amp;#125;.jpg'</span>.format<span class="token punctuation">(</span>name<span class="token punctuation">))</span>
+                print<span class="token punctuation">(</span><span class="token string">'成功下载图片：{}.jpg'</span>.format<span class="token punctuation">(</span>name<span class="token punctuation">))</span>
 
 
 download <span class="token operator">=</span> Pixiv_DownLoad<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -533,7 +533,7 @@ download <span class="token operator">=</span> Pixiv_DownLoad<span class="token 
             download.img_download<span class="token punctuation">(</span>target_url,name<span class="token punctuation">)</span>
     except IndexError:
         print<span class="token punctuation">(</span><span class="token string">'所有图片已爬取完成'</span><span class="token punctuation">)</span>
-    print<span class="token punctuation">(</span>f<span class="token string">'循环到第&amp;#123;p&amp;#125;页了哦！'</span><span class="token punctuation">)</span>   # p为页码位置，如中途中断可自行修改for循环中的p的范围（左闭右开）
+    print<span class="token punctuation">(</span>f<span class="token string">'循环到第{p}页了哦！'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># p为页码位置，如中途中断可自行修改for循环中的p的范围（左闭右开）</span>
 
 </code></pre>
 <hr>

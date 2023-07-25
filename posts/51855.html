@@ -30,7 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3928011224898363"
      crossorigin="anonymous"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -439,7 +439,7 @@
 </ul>
 <hr>
 <h2 id="GO实现"><a href="#GO实现" class="headerlink" title="GO实现"></a>GO实现</h2><h3 id="文件结构："><a href="#文件结构：" class="headerlink" title="文件结构："></a>文件结构：</h3><p>algor01&#x2F;  </p>
-<p>&amp;emsp;├── greedyknapsack&#x2F;<br>&amp;emsp;∣    &amp;emsp;  &amp;emsp; &amp;emsp; &amp;emsp; &amp;emsp;└── greedyknapsack.go<br>&amp;emsp;└──main&#x2F;<br>&amp;emsp;&amp;emsp; &amp;emsp;└── main.go    </p>
+<p>&emsp;├── greedyknapsack&#x2F;<br>&emsp;∣    &emsp;  &emsp; &emsp; &emsp; &emsp;└── greedyknapsack.go<br>&emsp;└──main&#x2F;<br>&emsp;&emsp; &emsp;└── main.go    </p>
 <p> greedyknapsack.go</p>
 <pre class=" language-Go"><code class="language-Go">package greedyknapsack
 
@@ -448,95 +448,95 @@ var profit float64 // 物品收益
 
 // var xi map[int]float64 //最大收益情况下各种物品放入背包的对应比例
 // 初始化对象
-type knapsack struct &#123;
+type knapsack struct {
     index  int
     weight int
     value  int
     profit float64
-&#125;
+}
 
 type Ks []*knapsack
 
-// type greedyknapsacker interface &#123;
-// &#125;
+// type greedyknapsacker interface {
+// }
 
-func InitKS(int_weight, int_value []int) *Ks &#123;
+func InitKS(int_weight, int_value []int) *Ks {
     ks := make(Ks, 5)
-    for i := 0; i < 5; i++ &#123;
+    for i := 0; i < 5; i++ {
         // ks[i].weight = int_weight[i]
         // ks[i].value = int_value[i]
         // ks[i].profit = 0
-        ks[i] = &knapsack&#123;index: i + 1, weight: int_weight[i], value: int_value[i], profit: 0&#125;
-    &#125;
+        ks[i] = &knapsack{index: i + 1, weight: int_weight[i], value: int_value[i], profit: 0}
+    }
     return &ks
-&#125;
+}
 
-// func (ks ks) initgk(int_weight, int_value []int) &#123;
+// func (ks ks) initgk(int_weight, int_value []int) {
 
-// 	for i := 0; i < len(int_weight); i++ &#123;
+// 	for i := 0; i < len(int_weight); i++ {
 // 		ks[i].weight = int_weight[i]
 // 		ks[i].value = int_value[i]
 // 		ks[i].profit = 0
-// 	&#125;
-// &#125;
+// 	}
+// }
 
-func (ks *Ks) ComputeRatio() &#123;
+func (ks *Ks) ComputeRatio() {
     r := *ks
-    for i := 0; i < 5; i++ &#123;
+    for i := 0; i < 5; i++ {
 
         w := (r[i]).weight
         v := (r[i]).value
         index := (r[i]).index
         var p float64 = float64(v) / float64(w)
-        r[i] = &knapsack&#123;index: index, weight: w, value: v, profit: p&#125;
-    &#125;
+        r[i] = &knapsack{index: index, weight: w, value: v, profit: p}
+    }
 
-&#125;
+}
 
 // 根据单位重量的收益值比大小，对物品进行排序
-func (ks *Ks) SortRatio() &#123;
+func (ks *Ks) SortRatio() {
     r := *ks
-    for i := 0; i < 5; i++ &#123;
-        for j := i + 1; j < 5; j++ &#123;
-            if (r[j]).profit > (r[i]).profit &#123;
+    for i := 0; i < 5; i++ {
+        for j := i + 1; j < 5; j++ {
+            if (r[j]).profit > (r[i]).profit {
                 temp := r[i]
                 r[i] = r[j]
                 r[j] = temp
-            &#125;
-        &#125;
-    &#125;
-&#125;
+            }
+        }
+    }
+}
 
 // 按背包物品index排序
 
 // 计算背包问题的最优解和所放物品的最大收益
-func (ks *Ks) ComputeProfit() (float64, map[int]float64) &#123;
+func (ks *Ks) ComputeProfit() (float64, map[int]float64) {
     var temp int = 0
     var i int = 0
     r := *ks
     xi := make(map[int]float64, 5)
-    for &#123;
-        if !(temp <= Capacity) &#123;
+    for {
+        if !(temp <= Capacity) {
             break
-        &#125;
-        if i == 5 &#123;
+        }
+        if i == 5 {
             break
-        &#125; else &#123;
-            if (r[i].weight + temp) <= Capacity &#123;
+        } else {
+            if (r[i].weight + temp) <= Capacity {
                 profit += (float64)(r[i].value)
                 temp += r[i].weight
                 xi[r[i].index] = float64(r[i].weight) / float64(Capacity)
-            &#125; else &#123;
+            } else {
                 var _weight int = Capacity - temp
                 profit += (float64)(_weight) / (float64)(r[i].profit)
                 temp += _weight
                 xi[r[i].index] = float64(_weight) / float64(Capacity)
-            &#125;
-        &#125;
+            }
+        }
         i++
-    &#125;
+    }
     return profit, xi
-&#125;
+}
 
 
 
@@ -549,10 +549,10 @@ func (ks *Ks) ComputeProfit() (float64, map[int]float64) &#123;
     <span class="token string">"fmt"</span>
 <span class="token punctuation">)</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     gk<span class="token punctuation">.</span>Capacity <span class="token operator">=</span> <span class="token number">10</span>
-    <span class="token keyword">var</span> w <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> v <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> w <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+    <span class="token keyword">var</span> v <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
     <span class="token keyword">var</span> ks <span class="token operator">*</span>gk<span class="token punctuation">.</span>Ks <span class="token operator">=</span> gk<span class="token punctuation">.</span><span class="token function">InitKS</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
 
     ks<span class="token punctuation">.</span><span class="token function">ComputeRatio</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -562,118 +562,118 @@ func (ks *Ks) ComputeProfit() (float64, map[int]float64) &#123;
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>profit<span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"最大收益情况下各种物品放入背包的对应比例:([物品]比例)"</span><span class="token punctuation">)</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>xi<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>输出结果：<br><img src="https://iaimi.cn/images/2022/04/12/2022-04-12-114324.png">   </p>
 <h3 id="GoSrc-源文件下载"><a href="#GoSrc-源文件下载" class="headerlink" title="GoSrc(源文件下载) "></a><a target="_blank" rel="noopener" href="https://nas.iaimi.cn/s/roT2tcqfdyqMDxt">GoSrc(源文件下载) </a></h3><hr>
-<h2 id="Java实现"><a href="#Java实现" class="headerlink" title="Java实现"></a>Java实现</h2><h3 id="文件结构：-1"><a href="#文件结构：-1" class="headerlink" title="文件结构："></a>文件结构：</h3><p>Algor01&#x2F;<br>&amp;emsp; &amp;emsp;├── Greedyknapsack.java<br>&amp;emsp; &amp;emsp;└── TestMain.java   </p>
+<h2 id="Java实现"><a href="#Java实现" class="headerlink" title="Java实现"></a>Java实现</h2><h3 id="文件结构：-1"><a href="#文件结构：-1" class="headerlink" title="文件结构："></a>文件结构：</h3><p>Algor01&#x2F;<br>&emsp; &emsp;├── Greedyknapsack.java<br>&emsp; &emsp;└── TestMain.java   </p>
 <p>Greedyknapsack.java</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> Algor01<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>security<span class="token punctuation">.</span>spec<span class="token punctuation">.</span>KeySpec<span class="token punctuation">;</span>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Greedyknapsack</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Greedyknapsack</span> <span class="token punctuation">{</span>
 <span class="token comment" spellcheck="true">//    定义属性、对象和方法</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span>  Capacity<span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">double</span> Profit<span class="token punctuation">;</span>
     <span class="token keyword">public</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> Xi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">public</span> knapsack<span class="token punctuation">[</span><span class="token punctuation">]</span> Ks<span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 初始化对象</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">knapsack</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">knapsack</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> index<span class="token punctuation">;</span>
         <span class="token keyword">int</span> weight<span class="token punctuation">;</span>
         <span class="token keyword">int</span> value<span class="token punctuation">;</span>
         <span class="token keyword">double</span> profit<span class="token punctuation">;</span>
-        <span class="token function">knapsack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token function">knapsack</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> w<span class="token punctuation">,</span><span class="token keyword">int</span> v<span class="token punctuation">,</span> <span class="token keyword">double</span> p<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">knapsack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token function">knapsack</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> w<span class="token punctuation">,</span><span class="token keyword">int</span> v<span class="token punctuation">,</span> <span class="token keyword">double</span> p<span class="token punctuation">)</span><span class="token punctuation">{</span>
             index <span class="token operator">=</span> i<span class="token punctuation">;</span>
             weight <span class="token operator">=</span> w<span class="token punctuation">;</span>
             value <span class="token operator">=</span> v<span class="token punctuation">;</span>
             profit <span class="token operator">=</span> p<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token function">Greedyknapsack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token function">Greedyknapsack</span><span class="token punctuation">(</span><span class="token keyword">int</span> C<span class="token punctuation">,</span><span class="token keyword">double</span> P<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">Greedyknapsack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Greedyknapsack</span><span class="token punctuation">(</span><span class="token keyword">int</span> C<span class="token punctuation">,</span><span class="token keyword">double</span> P<span class="token punctuation">)</span><span class="token punctuation">{</span>
         Capacity <span class="token operator">=</span> C<span class="token punctuation">;</span>
         Profit <span class="token operator">=</span> P<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">// 初始化物品们</span>
-    <span class="token keyword">public</span> knapsack<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">InitKs</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> w<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> v<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> knapsack<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">InitKs</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> w<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> v<span class="token punctuation">)</span><span class="token punctuation">{</span>
         Ks <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">knapsack</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
             knapsack k <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">knapsack</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
         <span class="token keyword">return</span> Ks<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">// 计算出单个物品的profit</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ComputeRatio</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ComputeRatio</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
             <span class="token keyword">double</span> p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token punctuation">)</span><span class="token punctuation">;</span>
             Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>profit <span class="token operator">=</span> p<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">// 根据单位重量的收益值比大小，对物品进行排序SortRatio</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">SortRatio</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">SortRatio</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         knapsack temp<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>profit <span class="token operator">></span> Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>profit<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>profit <span class="token operator">></span> Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>profit<span class="token punctuation">)</span><span class="token punctuation">{</span>
                     temp <span class="token operator">=</span> Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
                     Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> Ks<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
                     Ks<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">// 计算背包问题的最优解和所放物品的最大收益</span>
-    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">ComputeProfit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">ComputeProfit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>temp <span class="token operator">&lt;=</span> Capacity<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>temp <span class="token operator">&lt;=</span> Capacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>weight <span class="token operator">+</span> temp<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> Capacity <span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>weight <span class="token operator">+</span> temp<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> Capacity <span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     Profit <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
                     temp <span class="token operator">+=</span> Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>weight<span class="token punctuation">;</span>
                     Xi<span class="token punctuation">[</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"物品:"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" 对应比例:"</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>weight <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span> Capacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
                     <span class="token keyword">int</span> _weight <span class="token operator">=</span> Capacity <span class="token operator">-</span> temp<span class="token punctuation">;</span>
                     Profit <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">(</span>_weight<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>profit<span class="token punctuation">)</span><span class="token punctuation">;</span>
                     temp <span class="token operator">+=</span> _weight<span class="token punctuation">;</span>
                     Xi<span class="token punctuation">[</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"物品:"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Ks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" 对应比例:"</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span>_weight <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span> Capacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
             i<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">return</span> Profit<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>TestMain.java   </p>
 <pre class=" language-Java"><code class="language-Java">package Algor01;
 
 import java.util.Arrays;
 
-public class TestMain &#123;
-    public static void main(String[] args) &#123;
+public class TestMain {
+    public static void main(String[] args) {
         Greedyknapsack gk = new Greedyknapsack(10,0);
-        int[] weight = &#123;1,2,3,4,5&#125;;
-        int[] value = &#123;3, 10, 6, 3, 5&#125;;
+        int[] weight = {1,2,3,4,5};
+        int[] value = {3, 10, 6, 3, 5};
         gk.InitKs(weight,value);
         gk.ComputeRatio();
         gk.SortRatio();
         double profit = gk.ComputeProfit();
         System.out.println("背包的最大收益:"+profit);
         System.out.println(Arrays.toString(gk.Xi));
-    &#125;
-&#125;
+    }
+}
 </code></pre>
 <p>输出结果：<br><img src="https://iaimi.cn/images/2022/04/12/2022-04-12-115224.png">  </p>
 <h3 id="JavaSrc-源文件下载"><a href="#JavaSrc-源文件下载" class="headerlink" title="JavaSrc(源文件下载)"></a><a target="_blank" rel="noopener" href="https://nas.iaimi.cn/s/3558kCmoYqPnRgJ">JavaSrc(源文件下载)</a></h3><hr>
