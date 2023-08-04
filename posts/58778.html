@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo上传博客代码时花括号被转义, blog,博客,sakura,cat,樱花,猫,订阅,教程">
+    <meta name="keywords" content="GoLang笔记, blog,博客,sakura,cat,樱花,猫,订阅,教程">
     <meta name="description" content="blog 一个技术分享博客 sakura cat 樱花 猫">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo上传博客代码时花括号被转义 | Kirino的小站</title>
+    <title>GoLang笔记 | Kirino的小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/../images/cover/108831742_p0_master1200.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/../images/cover/110515275_p0_master1200.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo上传博客代码时花括号被转义</h1>
+                    <h1 class="description center-align post-title">GoLang笔记</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/GoLang/">
+                                <span class="chip bg-color">GoLang</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                                <span class="chip bg-color">程序设计</span>
                             </a>
                         
                     </div>
@@ -384,14 +392,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-25
+                    2023-08-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-25
+                    2023-08-04
                 </div>
                 
 
@@ -410,17 +418,96 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="hexo上传博客代码时花括号被转义"><a href="#hexo上传博客代码时花括号被转义" class="headerlink" title="hexo上传博客代码时花括号被转义"></a>hexo上传博客代码时花括号被转义</h1><p>找到自己的项目名&#x2F;node_modules\hexo-prism-plugin\src\index.js</p>
-<p>配置转义符号，如下：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token string">'&amp;#39;'</span><span class="token punctuation">:</span> <span class="token string">'\''</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;amp;'</span><span class="token punctuation">:</span> <span class="token string">'&amp;'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;gt;'</span><span class="token punctuation">:</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;lt;'</span><span class="token punctuation">:</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;quot;'</span><span class="token punctuation">:</span> <span class="token string">'"'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;#123;'</span><span class="token punctuation">:</span> <span class="token string">'{'</span><span class="token punctuation">,</span>
-  <span class="token string">'&amp;#125;'</span><span class="token punctuation">:</span> <span class="token string">'}'</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <h1 id="在Go中使用sort-Sort-对字符串进行排序"><a href="#在Go中使用sort-Sort-对字符串进行排序" class="headerlink" title="在Go中使用sort.Sort()对字符串进行排序"></a>在Go中使用<code>sort.Sort()</code>对字符串进行排序</h1><h2 id="sort-Sort-的函数签名"><a href="#sort-Sort-的函数签名" class="headerlink" title="sort.Sort()的函数签名"></a><code>sort.Sort()</code>的函数签名</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Sort</span><span class="token punctuation">(</span>data Interface<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="data-Interface的接口定义"><a href="#data-Interface的接口定义" class="headerlink" title="data Interface的接口定义"></a><code>data Interface</code>的接口定义</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> Interface <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Len is the number of elements in the collection.</span>
+    <span class="token function">Len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
+
+    <span class="token comment" spellcheck="true">// Less reports whether the element with index i</span>
+    <span class="token comment" spellcheck="true">// must sort before the element with index j.</span>
+    <span class="token function">Less</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+
+    <span class="token comment" spellcheck="true">// Swap swaps the elements with indexes i and j.</span>
+    <span class="token function">Swap</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>我们需要实现这个data接口来实现排序</p>
+<ul>
+<li><code>Len() int</code></li>
+<li><code>Less(i, j int) bool</code></li>
+<li><code>Swap(i, j int)</code></li>
+</ul>
+<h2 id="实现data接口"><a href="#实现data接口" class="headerlink" title="实现data接口"></a>实现<code>data</code>接口</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> sortRuneString <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Swap</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Less</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"sort"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">sortString</span><span class="token punctuation">(</span><span class="token string">"bac"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">sortString</span><span class="token punctuation">(</span>input <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    runeArray <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">rune</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span>
+    sort<span class="token punctuation">.</span><span class="token function">Sort</span><span class="token punctuation">(</span><span class="token function">sortRuneString</span><span class="token punctuation">(</span>runeArray<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>runeArray<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> sortRuneString <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Swap</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Less</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="二维数组排序"><a href="#二维数组排序" class="headerlink" title="二维数组排序"></a>二维数组排序</h2><p>使用<code>func Slice(slice interface&#123;&#125;, less func(i, j int) bool)</code></p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 二维数组排序</span>
+<span class="token keyword">var</span> intervals <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+<span class="token comment" spellcheck="true">// 根据二维数组元素的第一个元素从小到大排序</span>
+sort<span class="token punctuation">.</span><span class="token function">Slice</span><span class="token punctuation">(</span>intervals<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> intervals<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="Go匹配字符串方法"><a href="#Go匹配字符串方法" class="headerlink" title="Go匹配字符串方法"></a>Go匹配字符串方法</h1><ul>
+<li>Go语言没有class,直接定义函数</li>
+<li>参数和返回值写在func前面</li>
+<li>用<code>strings.Contains</code>替代Java的contains方法</li>
+<li>Go语言字符串取子串用字符串切片<code>s[i:j]</code>,而不是Java的substring方法</li>
+<li><code>len(str)</code>获取字符串长度,而不是Java的length属性</li>
+</ul>
+<h2 id="strings-Contains"><a href="#strings-Contains" class="headerlink" title="strings.Contains()"></a><code>strings.Contains()</code></h2><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">repeatedSubstringPattern</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+    str <span class="token operator">:=</span> s <span class="token operator">+</span> s
+    <span class="token keyword">return</span> strings<span class="token punctuation">.</span><span class="token function">Contains</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>对应的Java版本</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">repeatedSubstringPattern</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String str <span class="token operator">=</span> s <span class="token operator">+</span> s<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>
@@ -447,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.iaimi.cn/posts/17128.html">https://blog.iaimi.cn/posts/17128.html</a>
+                    <a href="https://blog.iaimi.cn/posts/58778.html">https://blog.iaimi.cn/posts/58778.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,8 +572,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/GoLang/">
+                                    <span class="chip bg-color">GoLang</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                                    <span class="chip bg-color">程序设计</span>
                                 </a>
                             
                         </div>
@@ -917,9 +1012,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/58778.html">
                     <div class="card-image">
@@ -939,9 +1035,9 @@ data Interface的接口定义type Interface interface {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -950,6 +1046,7 @@ data Interface的接口定义type Interface interface {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -976,20 +1073,21 @@ data Interface的接口定义type Interface interface {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/55282.html">
+                <a href="/posts/17128.html">
                     <div class="card-image">
                         
-                        <img src="/../images/cover/103269225_p0_master1200.jpg" class="responsive-img" alt="位运算合集">
+                        <img src="/../images/cover/108831742_p0_master1200.jpg" class="responsive-img" alt="hexo上传博客代码时花括号被转义">
                         
-                        <span class="card-title">位运算合集</span>
+                        <span class="card-title">hexo上传博客代码时花括号被转义</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            位运算合集231. 2 的幂给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
-如果存在一个整数 x 使得 n &#x3D;&#x3D; 2x ，则认为 n 是 2 的幂次方。
-示例 
+                            hexo上传博客代码时花括号被转义找到自己的项目名&#x2F;node_modules\hexo-prism-plugin\src\index.js
+配置转义符号，如下：
+const map = {
+  '&amp;#39;': '\'',
                         
                     </div>
                     <div class="publish-info">
@@ -1007,12 +1105,8 @@ data Interface的接口定义type Interface interface {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Algorithm/">
-                        <span class="chip bg-color">Algorithm</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">位运算</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
