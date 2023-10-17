@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="GoLang笔记, blog,博客,sakura,cat,樱花,猫,订阅,教程">
+    <meta name="keywords" content="Java多线程PV操作实现, blog,博客,sakura,cat,樱花,猫,订阅,教程">
     <meta name="description" content="blog 一个技术分享博客 sakura cat 樱花 猫">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>GoLang笔记 | Kirino的小站</title>
+    <title>Java多线程PV操作实现 | Kirino的小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/../images/cover/110515275_p0_master1200.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/../images/cover/112209331_p0_master1200.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">GoLang笔记</h1>
+                    <h1 class="description center-align post-title">Java多线程PV操作实现</h1>
                 </div>
             </div>
         </div>
@@ -368,16 +368,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/GoLang/">
-                                <span class="chip bg-color">GoLang</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                <span class="chip bg-color">多线程</span>
                             </a>
                         
-                            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">程序设计</span>
+                            <a href="/tags/PV%E6%93%8D%E4%BD%9C/">
+                                <span class="chip bg-color">PV操作</span>
                             </a>
                         
                     </div>
@@ -392,14 +392,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-04
+                    2023-10-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-04
+                    2023-10-17
                 </div>
                 
 
@@ -418,97 +418,267 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="在Go中使用sort-Sort-对字符串进行排序"><a href="#在Go中使用sort-Sort-对字符串进行排序" class="headerlink" title="在Go中使用sort.Sort()对字符串进行排序"></a>在Go中使用<code>sort.Sort()</code>对字符串进行排序</h1><h2 id="sort-Sort-的函数签名"><a href="#sort-Sort-的函数签名" class="headerlink" title="sort.Sort()的函数签名"></a><code>sort.Sort()</code>的函数签名</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">Sort</span><span class="token punctuation">(</span>data Interface<span class="token punctuation">)</span>
-</code></pre>
-<h2 id="data-Interface的接口定义"><a href="#data-Interface的接口定义" class="headerlink" title="data Interface的接口定义"></a><code>data Interface</code>的接口定义</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> Interface <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// Len is the number of elements in the collection.</span>
-    <span class="token function">Len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
-
-    <span class="token comment" spellcheck="true">// Less reports whether the element with index i</span>
-    <span class="token comment" spellcheck="true">// must sort before the element with index j.</span>
-    <span class="token function">Less</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
-
-    <span class="token comment" spellcheck="true">// Swap swaps the elements with indexes i and j.</span>
-    <span class="token function">Swap</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>我们需要实现这个data接口来实现排序</p>
+                <p>好的,结合提供的代码和文章内容,我总结生成了一篇关于《Java多线程PV操作实现》的文章:</p>
+<h1 id="Java多线程PV操作实现"><a href="#Java多线程PV操作实现" class="headerlink" title="Java多线程PV操作实现"></a>Java多线程PV操作实现</h1><p>PV操作是操作系统中的一个重要概念,它可以用于解决多线程之间的同步和互斥问题。本文将通过Java代码示例,说明如何使用PV操作实现典型的生产者-消费者问题。</p>
+<h2 id="PV操作介绍"><a href="#PV操作介绍" class="headerlink" title="PV操作介绍"></a>PV操作介绍</h2><p>PV操作由两个基本方法组成:</p>
 <ul>
-<li><code>Len() int</code></li>
-<li><code>Less(i, j int) bool</code></li>
-<li><code>Swap(i, j int)</code></li>
+<li>P():如果有可用资源,占有资源;如果无可用资源,线程阻塞</li>
+<li>V():释放资源,唤醒被阻塞的线程</li>
 </ul>
-<h2 id="实现data接口"><a href="#实现data接口" class="headerlink" title="实现data接口"></a>实现<code>data</code>接口</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">type</span> sortRuneString <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Swap</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Less</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+<p>利用P()和V()可以控制对共享资源的互斥访问。一般来说,使用资源的代码要放在P()和V()之间,如:</p>
+<pre class=" language-java"><code class="language-java"><span class="token function">P</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 加锁</span>
+<span class="token comment" spellcheck="true">// 使用资源的代码</span>
+<span class="token function">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 释放锁</span>
 </code></pre>
-<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"fmt"</span>
-    <span class="token string">"sort"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">sortString</span><span class="token punctuation">(</span><span class="token string">"bac"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">sortString</span><span class="token punctuation">(</span>input <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    runeArray <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">rune</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span>
-    sort<span class="token punctuation">.</span><span class="token function">Sort</span><span class="token punctuation">(</span><span class="token function">sortRuneString</span><span class="token punctuation">(</span>runeArray<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>runeArray<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">type</span> sortRuneString <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Swap</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Less</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token punctuation">(</span>s sortRuneString<span class="token punctuation">)</span> <span class="token function">Len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="二维数组排序"><a href="#二维数组排序" class="headerlink" title="二维数组排序"></a>二维数组排序</h2><p>使用<code>func Slice(slice interface&#123;&#125;, less func(i, j int) bool)</code></p>
-<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 二维数组排序</span>
-<span class="token keyword">var</span> intervals <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
-<span class="token comment" spellcheck="true">// 根据二维数组元素的第一个元素从小到大排序</span>
-sort<span class="token punctuation">.</span><span class="token function">Slice</span><span class="token punctuation">(</span>intervals<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> intervals<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<h1 id="Go匹配字符串方法"><a href="#Go匹配字符串方法" class="headerlink" title="Go匹配字符串方法"></a>Go匹配字符串方法</h1><ul>
-<li>Go语言没有class,直接定义函数</li>
-<li>参数和返回值写在func前面</li>
-<li>用<code>strings.Contains</code>替代Java的contains方法</li>
-<li>Go语言字符串取子串用字符串切片<code>s[i:j]</code>,而不是Java的substring方法</li>
-<li><code>len(str)</code>获取字符串长度,而不是Java的length属性</li>
+<p>P()和V()需要确保原子性,即不能被中断,通常使用synchronized或者ReentrantLock来保证。</p>
+<h2 id="生产者-消费者问题"><a href="#生产者-消费者问题" class="headerlink" title="生产者-消费者问题"></a>生产者-消费者问题</h2><p>典型的生产者-消费者问题包含以下元素:</p>
+<ul>
+<li>生产者线程:往缓冲区中生产商品</li>
+<li>消费者线程:从缓冲区中消费商品</li>
+<li>缓冲区:用于存放商品的容器</li>
+<li>空闲缓冲区数:可用于生产的空缓冲区数</li>
+<li>已用缓冲区数:已存放商品的缓冲区数</li>
 </ul>
-<h2 id="strings-Contains"><a href="#strings-Contains" class="headerlink" title="strings.Contains()"></a><code>strings.Contains()</code></h2><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">repeatedSubstringPattern</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-    str <span class="token operator">:=</span> s <span class="token operator">+</span> s
-    <span class="token keyword">return</span> strings<span class="token punctuation">.</span><span class="token function">Contains</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+<p>生产者和消费者需要互斥访问缓冲区,并且生产者线程生产完商品后需要通知消费者线程,消费者线程消费完商品后需要通知生产者线程。</p>
+<h2 id="PV操作实现"><a href="#PV操作实现" class="headerlink" title="PV操作实现"></a>PV操作实现</h2><h3 id="1-定义PV操作信号量类"><a href="#1-定义PV操作信号量类" class="headerlink" title="1. 定义PV操作信号量类"></a>1. 定义PV操作信号量类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">PV</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">P</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>count <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
 <span class="token punctuation">}</span>
 </code></pre>
-<p>对应的Java版本</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">repeatedSubstringPattern</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> s <span class="token operator">+</span> s<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="2-定义生产者和消费者线程"><a href="#2-定义生产者和消费者线程" class="headerlink" title="2. 定义生产者和消费者线程"></a>2. 定义生产者和消费者线程</h3><ul>
+<li>生产者线程:调用空闲信号量的P()方法获取许可,生产商品,调用已用信号量的V()方法释放</li>
+<li>消费者线程:调用已用信号量的P()方法获取许可,消费商品,调用空闲信号量的V()方法释放</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Producer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      idle<span class="token punctuation">.</span><span class="token function">P</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token comment" spellcheck="true">// 生产商品</span>
+     
+      used<span class="token punctuation">.</span><span class="token function">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Consumer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      used<span class="token punctuation">.</span><span class="token function">P</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token comment" spellcheck="true">// 消费商品</span>
+      
+      idle<span class="token punctuation">.</span><span class="token function">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
 <span class="token punctuation">}</span>
 </code></pre>
+<h3 id="3-定义资源类"><a href="#3-定义资源类" class="headerlink" title="3. 定义资源类"></a>3. 定义资源类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Resources</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 缓冲区</span>
+  
+  PV idle<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 空闲缓冲区数量</span>
+  
+  PV used<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 已用缓冲区数量</span>
+  
+  <span class="token keyword">public</span> <span class="token function">Resources</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    idle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PV</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    used <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PV</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">produce</span><span class="token punctuation">(</span><span class="token keyword">int</span> item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    buffer<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> 
+  
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">consume</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> buffer<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="4-主线程"><a href="#4-主线程" class="headerlink" title="4. 主线程"></a>4. 主线程</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    Resources resources <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Resources</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    Producer p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>resources<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Consumer c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Consumer</span><span class="token punctuation">(</span>resources<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>PV操作提供了一种控制多个线程访问共享资源的互斥方式。在Java中可以使用synchronized或Lock来实现PV的互斥特性。对于典型的生产者-消费者问题,可以通过定义空闲资源和已用资源的PV信号量,在生产者和消费者线程中使用P()和V()来实现线程之间的同步访问。</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>clov614<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>clov614<span class="token punctuation">.</span>pojo<span class="token punctuation">.</span>Good<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PVDemo</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 三个生产者</span>
+        <span class="token comment" spellcheck="true">// 三个消费者</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Consumer</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+  <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">sync</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">sync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">sync</span><span class="token punctuation">(</span><span class="token keyword">int</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      count <span class="token operator">=</span> c<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">--</span>count<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">Signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+      <span class="token operator">++</span>count<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Global</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> sync idle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">sync</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> sync used <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">sync</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">static</span> sync mutex <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">sync</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> Repository buf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Repository</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">static</span> <span class="token keyword">int</span> pCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> cCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+ <span class="token keyword">class</span> <span class="token class-name">Repository</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> Good<span class="token punctuation">[</span><span class="token punctuation">]</span> goodArray<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> usedSize <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Repository</span><span class="token punctuation">(</span><span class="token keyword">int</span> goodSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      goodArray <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Good</span><span class="token punctuation">[</span>goodSize<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveGood</span><span class="token punctuation">(</span><span class="token keyword">int</span> goodsId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>usedSize <span class="token operator">&lt;</span> goodArray<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        goodArray<span class="token punctuation">[</span>usedSize<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Good</span><span class="token punctuation">(</span>goodsId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        usedSize<span class="token operator">++</span><span class="token punctuation">;</span> 
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> Good <span class="token function">takeGood</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>usedSize <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> goodArray<span class="token punctuation">[</span><span class="token operator">--</span>usedSize<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Producer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">int</span> ID<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Producer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">Producer</span><span class="token punctuation">(</span><span class="token keyword">int</span> ID<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>ID <span class="token operator">=</span> ID<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>Global<span class="token punctuation">.</span>pCount <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Global<span class="token punctuation">.</span>idle<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Global<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       
+        Global<span class="token punctuation">.</span>buf<span class="token punctuation">.</span><span class="token function">saveGood</span><span class="token punctuation">(</span>Global<span class="token punctuation">.</span>pCount <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"生产者"</span> <span class="token operator">+</span> ID <span class="token operator">+</span> <span class="token string">"在缓冲区生产了物品"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Global<span class="token punctuation">.</span>pCount <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">++</span>Global<span class="token punctuation">.</span>pCount<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+       
+        Global<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Global<span class="token punctuation">.</span>used<span class="token punctuation">.</span><span class="token function">Signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Consumer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">int</span> ID<span class="token punctuation">;</span>
+
+    <span class="token function">Consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">Consumer</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>ID <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>Global<span class="token punctuation">.</span>cCount <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Global<span class="token punctuation">.</span>used<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Global<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       
+        Good good <span class="token operator">=</span> Global<span class="token punctuation">.</span>buf<span class="token punctuation">.</span><span class="token function">takeGood</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"消费者"</span> <span class="token operator">+</span> ID <span class="token operator">+</span> <span class="token string">"消费了物品"</span> <span class="token operator">+</span> good<span class="token punctuation">.</span><span class="token function">getGoodId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">++</span>Global<span class="token punctuation">.</span>cCount<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+       
+        Global<span class="token punctuation">.</span>mutex<span class="token punctuation">.</span><span class="token function">Signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Global<span class="token punctuation">.</span>idle<span class="token punctuation">.</span><span class="token function">Signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/TQCAI/p/7700354.html">Java实现PV操作 | 生产者与消费者</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903472370810894">信号量与 PV 操作的 Java 讲解</a></p>
 
             </div>
             <hr/>
@@ -534,7 +704,7 @@ sort<span class="token punctuation">.</span><span class="token function">Slice</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.iaimi.cn/posts/58778.html">https://blog.iaimi.cn/posts/58778.html</a>
+                    <a href="https://blog.iaimi.cn/posts/6322.html">https://blog.iaimi.cn/posts/6322.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -572,16 +742,16 @@ sort<span class="token punctuation">.</span><span class="token function">Slice</
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/GoLang/">
-                                    <span class="chip bg-color">GoLang</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                    <span class="chip bg-color">多线程</span>
                                 </a>
                             
-                                <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">程序设计</span>
+                                <a href="/tags/PV%E6%93%8D%E4%BD%9C/">
+                                    <span class="chip bg-color">PV操作</span>
                                 </a>
                             
                         </div>
@@ -1012,9 +1182,10 @@ sort<span class="token punctuation">.</span><span class="token function">Slice</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/6322.html">
                     <div class="card-image">
@@ -1032,9 +1203,9 @@ Java多线程PV操作实现PV操作是操作系统中的一个重要概念,它�
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1043,6 +1214,7 @@ Java多线程PV操作实现PV操作是操作系统中的一个重要概念,它�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1069,26 +1241,26 @@ Java多线程PV操作实现PV操作是操作系统中的一个重要概念,它�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/17128.html">
+                <a href="/posts/58778.html">
                     <div class="card-image">
                         
-                        <img src="/../images/cover/108831742_p0_master1200.jpg" class="responsive-img" alt="hexo上传博客代码时花括号被转义">
+                        <img src="/../images/cover/110515275_p0_master1200.jpg" class="responsive-img" alt="GoLang笔记">
                         
-                        <span class="card-title">hexo上传博客代码时花括号被转义</span>
+                        <span class="card-title">GoLang笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hexo上传博客代码时花括号被转义找到自己的项目名&#x2F;node_modules\hexo-prism-plugin\src\index.js
-配置转义符号，如下：
-const map = {
-  '&amp;#39;': '\'',
+                            在Go中使用sort.Sort()对字符串进行排序sort.Sort()的函数签名func Sort(data Interface)
+
+data Interface的接口定义type Interface interface {
+    //
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-04
                             </span>
                         <span class="publish-author">
                             
@@ -1101,8 +1273,16 @@ const map = {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/GoLang/">
+                        <span class="chip bg-color">GoLang</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">程序设计</span>
                     </a>
                     
                 </div>
